@@ -37,3 +37,41 @@
   margin-left: 30px;
   font-size: 35px;
 }
+
+/* About CSS */
+
+.about {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.container {
+  padding: 50px;
+  align-items: center;
+  width: 40%;
+}
+
+.container img {
+  width: 100%;
+}
+
+.intro {
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  padding-top: 100px;
+  font-weight: 300;
+}
+
+.self {
+  font-size: 20px;
+  font-style: oblique;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  width: 70%;
+}
