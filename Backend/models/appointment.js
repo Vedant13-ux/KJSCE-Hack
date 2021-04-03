@@ -25,6 +25,10 @@ const appointmentSchema = new mongoose.Schema({
             ref: 'Appointment'
         }
     ],
+    isFollowUp: {
+        type: Boolean,
+        default: false
+    }
 
 });
 
