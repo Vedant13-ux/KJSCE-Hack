@@ -9,7 +9,7 @@ import '../index2.css'
 import Landing from '../components/Landing'
 import Blog from '../components/Blog'
 import Course from '../components/Course'
-import Questions from '../containers/Auth/newUser'
+import Questions from './Auth/newAppointmentjs'
 import Chats from './Chat/chats'
 
 class Main extends React.Component {
