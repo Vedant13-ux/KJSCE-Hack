@@ -10,18 +10,12 @@ function Blog() {
         <div>
             <Nav />
             <div className="course_card">
-
-                {/* {video.map((d, i)=>{
-                    return(
-                        <MediaCard key={i} data={d}></MediaCard>
-                    );
-                })} */}
-
-                <BlogCard className="blogCard"/>
-                <BlogCard className="blogCard"/>           
-                <BlogCard className="blogCard"/>
-                <BlogCard className="blogCard"/>
-                
+                <div className="blogCard"><BlogCard /></div> 
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
             </div>
             
         </div>
