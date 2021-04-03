@@ -2,6 +2,7 @@ import React from 'react';
 import MediaCard from './MediaCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav'
+import Footer from '../containers/global/Footer';
 
 function Course() {
 
@@ -50,6 +51,7 @@ function Course() {
             })}
 
         </div>
+        <Footer />
     </div>
     )
 }
