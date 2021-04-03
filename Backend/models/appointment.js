@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const appointmentSchema = new mongoose.Schema({
-    date: Date,
+    date: {
+        type: Date,
+        default: Date.now
+    },
     time: String,
     counsellor: [
         {
@@ -8,11 +11,10 @@ const appointmentSchema = new mongoose.Schema({
             ref: 'User'
         }
     ],
-    counsultant: {
+    advisee: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    feedback: String,
     messages: [
         {
             type: mongoose.Schema.Types.ObjectId,
