@@ -11,7 +11,11 @@ import Blog from '../components/Blog'
 import Course from '../components/Course'
 import Questions from './Auth/newAppointment'
 import Chats from './Chat/chats'
+<<<<<<< HEAD
+import ExpertsPage from '../components/ExpertsPage'
+=======
 import BlogContent from '../components/BlogContent';
+>>>>>>> 70f6c235b3992d946df59785d491de883386a055
 
 class Main extends React.Component {
     constructor(props) {
@@ -46,6 +50,7 @@ class Main extends React.Component {
 
 
                     <Route exact path="/blog" render={props => <Blog {...props} />} />
+                    <Route exact path="/experts" render={props => <ExpertsPage {...props} />} />
                     <Route exact path="/course" render={props => <Course {...props} />} />
                     <Route exact path="/newuser" render={props => <Questions {...props} />} />
                     <Route exact path="/blogcontent" render={props => <BlogContent {...props} />} />
