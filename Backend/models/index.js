@@ -3,8 +3,7 @@ mongoose.set('debug', true);
 mongoose.Promise = Promise;
 mongoose
     .connect(
-        process.env.MONGODB_URI2,
-        'mongodb+srv://vedant:1234@cluster0.blpd9.mongodb.net/linkedin?retryWrites=true&w=majority',
+        process.env.MONGODB_URI,
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -21,3 +20,9 @@ mongoose
     });
 
 module.exports.User = require('./user');
+module.exports.Conversation = require('./conversation');
+module.exports.Message = require('./messages');
+module.exports.Course = require('./courses');
+module.exports.Appointment = require('./appointment');
+module.exports.User = require('./user');
+
