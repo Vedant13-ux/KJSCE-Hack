@@ -20,9 +20,9 @@ class RegisterStudents extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            email: "",
-            password: "",
+            place: "",
+            experience: "",
+            reachout: "",
             error: ""
         };
         this.handleChange = (e) => {
@@ -31,11 +31,11 @@ class RegisterStudents extends React.Component {
         this.handleSubmit = (e) => {
             e.preventDefault();
             const {
-                name,
-                email,
-                password
+                place,
+                experience,
+                reachout
             } = this.state;
-            const data = { name, email, password };
+            const data = { place, experience, reachout };
             apiCallAuth("post", "/signup", data)
                 .then(async (response) => {
                     console.log(response);
@@ -71,18 +71,26 @@ class RegisterStudents extends React.Component {
                     </Grid>
                     <form onSubmit={this.handleSubmit} className="ui form" id="questionBlock">
                         <div className="field">
-                            <label>In which premises, did you face Bullying?</label>
-                            <input type="text" name="first-name" placeholder="First Name" />
+                            <label>At which premise, did you face Bullying?</label>
+                            <select onChange={this.handleChange} required name="place">
+                                <option value="">Place</option>
+                                <option value="">At School</option>
+                                <option value="">At College</option>
+                                <option value="">At Home</option>
+                                <option value="">On Internet</option>
+                                <option value="">At Workplace</option>
+                                <option value="">Somwhere Else</option>
+
+
+                            </select>
                         </div>
-                        <div className="field">
-                            <label>Last Name</label>
-                            <input type="text" name="last-name" placeholder="Last Name" />
+                        <div className="field" >
+                            <label>Tell us about yout experience</label>
+                            <textarea name="experience" onChange={this.handleChange} required />
                         </div>
-                        <div className="field">
-                            <div className="ui checkbox">
-                                <input type="checkbox" tabindex="0" className="hidden" />
-                                <label>I agree to the Terms and Conditions</label>
-                            </div>
+                        <div className="field" >
+                            <label>How did you reach out to us?</label>
+                            <textarea name="reachout" onChange={this.handleChange} required />
                         </div>
 
                         <Button
