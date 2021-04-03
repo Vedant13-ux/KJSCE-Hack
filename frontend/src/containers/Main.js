@@ -9,7 +9,7 @@ import '../index2.css'
 import Landing from '../components/Landing'
 import Blog from '../components/Blog'
 import Course from '../components/Course'
-import Questions from '../containers/Auth/newUser'
+import Questions from './Auth/newAppointmentjs'
 import Chats from './Chat/chats'
 
 class Main extends React.Component {
@@ -40,7 +40,7 @@ class Main extends React.Component {
                     <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.user._id} />} />
                     <Route exact path="/login" render={props => <Login login={this.login} {...props} />} />
                     <Route exact path="/signup" render={props => <Signup  {...props} />} />
-                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.uid} {...props} />} />
+                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.user._id} {...props} />} />
                     <Route exact path="/verify-email/:token" render={props => <EmailVerification login={this.login} {...props} />} />
 
 
