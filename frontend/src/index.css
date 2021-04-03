@@ -22,3 +22,20 @@ code {
   max-width: 450px;
   width: 95%;
 }
+/********* chats appointments ***********/
+#experience .experience-ele{
+  padding: 20px;
+  margin: 10px;
+  margin-right: auto;
+  border: 1.5px solid #bdbdbdd2;
+  border-left: 10px solid #020b53;
+}
+#experience .experience-ele h4{
+  border-radius: 5px;
+  padding: 3px 6px;
+  font-size: 14px;
+  margin-bottom: 0 !important;
+} 
+#experience .experience-ele div{
+	margin-left: 8px;
+}
