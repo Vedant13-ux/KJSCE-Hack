@@ -10,7 +10,7 @@ class ChatApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            contacts: [{ text: 'John Smith' }, { text: 'Molly Watt' }, { text: 'Ivan Mackay' }],
+            contacts: [],
             messages: [], 
             message: '',
             conversations: [],
@@ -24,6 +24,12 @@ class ChatApp extends React.Component {
             socket.on("yo", () => {
                 console.log("connected to server");
             });
+            socket.on('new-messr',m=>{
+                console.log(m)
+                let tilln=this.state.messages
+                tilln.push(m)
+                this.setState({messages:tilln})
+            })
             socket.on('get-rmess',m=>{
                 this.setState({messages:m.messages,contacts:m.counsellor})
                 console.log(m)
@@ -73,13 +79,13 @@ class ChatApp extends React.Component {
         }
         const newItem = {
             text: this.state.message,
-            id: Date.now(),
-            me: true
+            author:this.props.uid
         };
-        this.setState(state => ({
-            messages: state.messages.concat(newItem),
-            message: ''
-        }));
+        socketstore.emit('room-message',{message:newItem,rid:this.props.match.params.id})
+        // this.setState(state => ({
+        //     messages: state.messages.concat(newItem),
+        //     message: ''
+        // }));
     }
 }
 
@@ -87,10 +93,11 @@ class MessagesHistory extends React.Component {
     
     render() {
         return [].concat(this.props.items).reverse().map(item =>{
-            console.log(item.author._id,this.props.uid)
             return (
             <div className={"message " + (item.author._id==this.props.uid ? "me" : "")} key={item.id}>
+                
                 <div className="message-body">
+                <h5 style={{margin:"0px"}}>{item.author.name}</h5>
                     {item.text}
                 </div>
             </div>
@@ -104,7 +111,7 @@ class ContactList extends React.Component {
             <ul>
                 {this.props.items.map(item => (
                     <li>
-                        {item.text}
+                        {item.name}
                     </li>
                 ))}
             </ul>
