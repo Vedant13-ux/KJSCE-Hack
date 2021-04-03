@@ -28,10 +28,10 @@ function Nav(){
             />
             <nav className="navlink">
                 <ul className="links">
-                    <li>Portfolio</li>
+                    <li>Discussions</li>
                     <li>About</li>
                     <li>Blog</li>
-                    <li>Contact</li>
+                    <li>Login/SignUp</li>
                 </ul>
             </nav>
 
