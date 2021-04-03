@@ -13,7 +13,7 @@
 
 .app {
 	box-sizing: border-box;
-    
+    margin-top:60px;
 	background-color: #DDD;
 	width: 900px;
 	height: 500px;

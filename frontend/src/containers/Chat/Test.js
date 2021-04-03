@@ -4,7 +4,7 @@ import Navbar from '../global/Nav'
 import socketClient from "socket.io-client";
 import Nav from '../global/Nav';
 const SERVER = "http://localhost:3001";
-
+var socketstore=null;
 class ChatApp extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +23,8 @@ class ChatApp extends React.Component {
             socket.on("yo", () => {
                 console.log("connected to server");
             });
-            this.setState({ socket })
+            socketstore=socket
+            //this.setState({ socket })
             //socket.close()
         };
 
@@ -37,26 +38,26 @@ class ChatApp extends React.Component {
             //     .catch((err) => console.log(err));
         };
     }
-    // async componentDidMount() {
-    //     console.log('Hello World');
-    //     await this.loadConversations();
-    //     await this.configureSocket();
-    // }
+    async componentDidMount() {
+        console.log('Hello World');
+        await this.loadConversations();
+        await this.configureSocket();
+    }
     render() {
         return (
             <div id="chat">
-                <Navbar></Navbar>                <div class="app">
-                    <div class="contact-list">
-                        <h1 class="title">My messages</h1>
+                <Navbar></Navbar>                <div className="app">
+                    <div className="contact-list">
+                        <h1 className="title">My messages</h1>
                         <ContactList items={this.state.contacts} />
                     </div>
-                    <div class="messages">
-                        <div class="messages-history">
+                    <div className="messages">
+                        <div className="messages-history">
                             <MessagesHistory items={this.state.messages} />
                         </div>
-                        <form class="messages-inputs" onSubmit={this.handleSubmit}>
+                        <form className="messages-inputs" onSubmit={this.handleSubmit}>
                             <input type="text" placeholder="Send a message" onChange={this.handleChange} value={this.state.message} />
-                            <button><i class="material-icons">send</i></button>
+                            <button><i className="material-icons">send</i></button>
                         </form>
                     </div>
                 </div>
@@ -89,7 +90,7 @@ class MessagesHistory extends React.Component {
     render() {
         return [].concat(this.props.items).reverse().map(item => (
             <div className={"message " + (item.me ? "me" : "")} key={item.id}>
-                <div class="message-body">
+                <div className="message-body">
                     {item.text}
                 </div>
             </div>

@@ -12,7 +12,7 @@ class Main extends React.Component {
             <div>
                 <Switch>
                     <Route exact path="/" render={props => <Landing {...props} />} />
-                    <Route exact path="/test" render={props => <Chat {...props} />} />
+                    <Route exact path="/chat" render={props => <Chat {...props} />} />
                 </Switch>
             </div>
         )
