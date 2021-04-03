@@ -12,7 +12,7 @@ class Main extends React.Component {
             <div>
                 <Switch>
                     <Route exact path="/" render={props => <Landing {...props} />} />
-                    <Route exact path="/chat:id" render={props => <Chat key={props.match.params.id} {...props} />} />
+                    <Route path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid="60685381b839e9392b6cef67" />} />
                 </Switch>
             </div>
         )
