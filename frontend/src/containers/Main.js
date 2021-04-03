@@ -29,9 +29,9 @@ class Main extends React.Component {
 
                     <Route exact path="/test" render={props => <Chat {...props} />} />
                     <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
-                    <Route exact path="/signup" render={props => <Signup {...props} />} />
+                    <Route exact path="/signup" render={props => <Signup  {...props} />} />
                     <Route exact path="/chat:id" render={props => <Chat key={props.match.params.id} {...props} />} />
-                    <Route exact path="/verify-email/:token" render={props => <EmailVerification {...props} />} />
+                    <Route exact path="/verify-email/:token" render={props => <EmailVerification setUser={this.setUser} {...props} />} />
                     
                     
                     <Route exact path="/blog" render={props => <Blog {...props} />} />

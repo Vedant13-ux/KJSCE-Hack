@@ -1,6 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import '../../index2.css';
 import Logo from '../../images/helping_mind_logo1.png';
+import {Link} from 'react-router-dom'
 
 function Nav(){
 
@@ -16,10 +17,10 @@ function Nav(){
             />
             <nav className="navlink">
                 <ul className="links">
-                    <li><a href="/">FAQ</a></li>
-                    <li><a href="/course">Course</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/">Login/SignUp</a></li>
+                    <li><Link to="#faq">FAQ</Link></li>
+                    <li><Link to="/course">Course</Link></li>
+                    <li><Link to="/blog">Blog</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                 </ul>
             </nav>
 

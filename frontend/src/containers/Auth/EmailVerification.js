@@ -18,7 +18,8 @@ class Emailverification extends Component {
                 await this.setState({
                     status: 'Email Verification Completed. Redirecting to KJSCE Connect.'
                 });
-                this.props.history.push('/home')
+
+                this.props.history.push('/')
 
             })
             .catch(async err => {

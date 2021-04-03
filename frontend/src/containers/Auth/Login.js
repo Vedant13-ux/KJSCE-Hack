@@ -33,7 +33,7 @@ class Login extends React.Component {
         .then((result) => {
           console.log('Logged In')
           this.props.setUser(result)
-          return this.props.history.push('/home');
+          return this.props.history.push('/');
         }).catch((err) => {
           return this.setState({ error: err.response.data.error.message });
         })
