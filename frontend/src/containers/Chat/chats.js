@@ -20,7 +20,9 @@ export default class ChatApp extends React.Component {
             <div id="chat">
                 <Navbar></Navbar>
                 <div className="app">
-                    
+                    {this.state.map((e,i)=>{
+                        return <div></div>
+                    })}
                 </div>
             </div>
         );
