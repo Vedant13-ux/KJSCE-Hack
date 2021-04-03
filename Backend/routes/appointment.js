@@ -10,6 +10,7 @@ router.get('/getall/:id', async (req, res, next) => {
     } catch (err) {
         next(err);
     }
-
 });
+
+// Book an Appointment
 module.exports = router;
