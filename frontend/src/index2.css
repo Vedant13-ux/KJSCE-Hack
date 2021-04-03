@@ -189,4 +189,10 @@
   color: #fff;
 }
 
+/* Floationg Button */
 
+.add_icon {
+  position: fixed;
+  margin-left: 1230px;
+  margin-top: 440px;
+}

@@ -14,7 +14,11 @@ code {
 
 
 /* ***********************Questions CSS************************ */
-#questionBlock .field input[type="text"]{
+#questionBlock .field select{
+  max-width:500px;
+  width: 95%;
+}
+#questionBlock textarea{
   max-width: 450px;
   width: 95%;
 }

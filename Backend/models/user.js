@@ -11,7 +11,7 @@ const userScehma = new mongoose.Schema({
     appointments: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Appoinment'
+            ref: 'Appointment'
         }
     ],
     emailToken: String,
