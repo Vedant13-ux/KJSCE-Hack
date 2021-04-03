@@ -5,30 +5,23 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// const socket = require('socket.io');
 
-// var server = require('http').createServer(app);
-// const io = socket(server);
-// require('./Chat')(io);
 
 const socket = require('socket.io');
-// const server = app.listen(process.env.PORT  3001, process.env.IP, () => {
-//     console.log('Server Listening on Port 3001');
-// });
+
+
 var server = require('http').createServer(app);
 const io = socket(server, {
     cors: {
         origin: '*',
     }
 });
-server.listen(process.env.PORT ||  3001, process.env.IP, () => {
+server.listen(process.env.PORT || 3001, process.env.IP, () => {
     console.log('Server Listening on Port 3001')
 })
 require('./Chat')(io);
-require('./seed')();
-// app.listen(process.env.PORT || 3001, process.env.IP, () => {
-//     console.log('Server Listening on Port 3001')
-// })
+// require('./seed')();
+
 const errorHandler = require('./handlers/errorHandler');
 
 
