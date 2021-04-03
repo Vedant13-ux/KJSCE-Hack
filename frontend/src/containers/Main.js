@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
-
+import Chat from 'Chat/test.js'
 
 class Main extends React.Component {
 
@@ -11,6 +11,7 @@ class Main extends React.Component {
             <div>
                 <Switch>
                     {/* <Route exact path="/" render={props => <Landing {...props} />} /> */}
+                    <Route exact path="/test" render={props => <Chat {...props} />} />
                 </Switch>
             </div>
         )
