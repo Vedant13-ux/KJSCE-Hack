@@ -1,12 +1,10 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import Chat from 'Chat/test.js'
+import Chat from './Chat/test'
 
 class Main extends React.Component {
 
     render() {
-
-
         return (
             <div>
                 <Switch>
