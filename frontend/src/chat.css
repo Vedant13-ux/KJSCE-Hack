@@ -1,0 +1,141 @@
+#chat {
+	background-color: #AAA;
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.app {
+	box-sizing: border-box;
+    
+	background-color: #DDD;
+	width: 900px;
+	height: 500px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	border-radius: 6px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+}
+
+.app .contact-list {
+	box-sizing: border-box;
+	background-color: white;
+	width: 200px;
+	overflow: auto;
+}
+
+.app .contact-list .title {
+	padding: 12px;
+	margin: 0;
+	padding-bottom: 0;
+	font-size: 150%;
+}
+
+.app .contact-list ul {
+	list-style: none;
+	margin: 0;
+	padding: 12px;
+}
+
+.app .contact-list ul li {
+	margin: 8px 0;
+	padding: 8px 12px;
+	position: relative;
+	cursor: pointer;
+	transition: all .2s ease-out;
+}
+
+.app .contact-list ul li.active, .app .contact-list ul li:hover {
+	background-color: #e1f0fa;
+	color: #3498db;
+	border-radius: 6px;
+}
+
+.app .messages {
+	box-sizing: border-box;
+	margin: 12px;
+	background-color: white;
+	border-radius: 6px;
+	overflow: hidden;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.app .messages .messages-history {
+	box-sizing: border-box;
+	overflow: auto;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: end;
+}
+
+.app .messages .messages-history .message {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 12px;
+	padding-top: 0;
+}
+
+.app .messages .messages-history .message:last-child {
+	padding-top: 12px;
+}
+
+.app .messages .messages-history .message.me {
+	text-align: right;
+}
+
+.app .messages .messages-history .message.me .message-body {
+	color: white;
+	background-color: #3498db;
+}
+
+.app .messages .messages-history .message .message-body {
+	background-color: #DDD;
+	color: #333;
+	font-weight: 400;
+	display: inline-block;
+	padding: 8px 12px;
+	border-radius: 6px;
+	max-width: 400px;
+	min-width: 75px;
+	line-height: 20px;
+	text-align: initial;
+}
+
+
+.app .messages .messages-inputs {
+	display: flex;
+}
+
+.app .messages .messages-inputs input[type="text"] {
+	background-color: transparent;
+	border: none;
+	padding: 12px;
+	resize: vertical;
+	flex: 1 1 auto;
+}
+
+.app .messages .messages-inputs button {
+	padding: 0 12px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.app .messages .messages-inputs button:hover i {
+	color: #3498db;
+}
+
+.app .messages .messages-inputs button i {
+	vertical-align: middle;
+	transition: all .2s ease-out;
+}
