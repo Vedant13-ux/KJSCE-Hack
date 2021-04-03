@@ -15,7 +15,8 @@ const userScehma = new mongoose.Schema({
         }
     ],
     emailToken: String,
-    role: String
+    role: String,
+    field: String
 });
 
 userScehma.methods.comparePassword = async function (password, next) {
