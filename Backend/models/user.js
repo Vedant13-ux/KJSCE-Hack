@@ -3,13 +3,18 @@ const bcrypt = require('bcrypt');
 const userScehma = new mongoose.Schema({
     name: String,
     password: String,
-    email: String,
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
     appointments: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Appoinment'
         }
     ],
+    emailToken: String,
     role: String
 });
 

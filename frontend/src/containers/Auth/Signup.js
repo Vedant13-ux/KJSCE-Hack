@@ -9,10 +9,6 @@ import {
     Link,
 } from "@material-ui/core";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
 import Alert from "@material-ui/lab/Alert";
 import { apiCallAuth } from "../../services/api";
 
@@ -128,14 +124,14 @@ class RegisterStudents extends React.Component {
                             name="confirm"
                             type="password"
                         />
-                        <Typography style={{ marginRight: "0", marginTop:"10px" }}>
+                        <Typography style={{ marginRight: "0", marginTop: "10px" }}>
                             Already have an account? <Link href="/login">Sign In</Link>
                         </Typography>
                         <Button
                             type="submit"
                             variant="contained"
                             color="primary"
-                            style={{ margin: "10px 0", left: "50%", transform: "translateX(-50%)" }}
+                            style={{ margin: "10px 0" }}
                         >
                             Sign up
                         </Button>
