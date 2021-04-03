@@ -2,15 +2,11 @@ const db = require('./models/index');
 
 
 async function seedDB() {
-    data = [
-        {
-            date: new Date(),
-            time: "12:45",
-            counsellor: ["606853563714bc38fc80db0e"],
-            consultant: "60685381b839e9392b6cef67",
-            messages: ["60686f663f0caa1d344136a3", "60686f663f0caa1d344136a4"]
-        }
-    ]
+    data = {
+        name:"huzaifapro",
+        password:"123",
+        email:"123"
+    }
     // data = [
     //     {
     //         text: "Hey Are You!",
@@ -46,7 +42,7 @@ async function seedDB() {
     //     }
     // ]
     // }
-    db.Appointment.create(data)
+    db.User.create(data)
         .then((message) => console.log(message))
         .catch(err => console.log(err))
 }
