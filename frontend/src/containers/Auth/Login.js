@@ -48,7 +48,6 @@ class Login extends React.Component {
       margin: "20px auto",
     };
     const avatarStyle = { backgroundColor: "#1bbd7e" };
-    const btnstyle = { margin: "35px 0" };
     const textFieldStyle = { margin: "15px 0" };
     return (
       <Grid>
