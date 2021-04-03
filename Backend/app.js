@@ -35,11 +35,11 @@ app.use(cors());
 // require('./seedDB')();
 // ROutes
 
-// const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth');
 
 
 // // Incuding Routes
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 
 app.use((req, res, next) => {

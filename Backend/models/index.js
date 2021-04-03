@@ -25,4 +25,5 @@ module.exports.Message = require('./messages');
 module.exports.Course = require('./courses');
 module.exports.Appointment = require('./appointment');
 module.exports.User = require('./user');
+module.exports.Blog = require('./blog')
 
