@@ -3,7 +3,7 @@ import BlogCard from './BlogCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav';
 import Footer from '../containers/global/Footer'
-import BlogContent from './BlogContent';
+import FloatingButtons from './FloatingButton';
 
 
 function Blog() {
@@ -17,7 +17,9 @@ function Blog() {
                 <div className="blogCard"><BlogCard /></div>
                 <div className="blogCard"><BlogCard /></div>
                 <div className="blogCard"><BlogCard /></div>
+                <div className="add_icon"><FloatingButtons /></div>
             </div>
+            
             <Footer />
         </div>
     )
