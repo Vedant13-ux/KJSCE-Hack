@@ -11,9 +11,21 @@ import Blog from '../components/Blog'
 import Course from '../components/Course'
 
 class Main extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={uid:"60685381b839e9392b6cef67"}
+        this.state = { uid: "60685381b839e9392b6cef67", user: {} }
+        this.login = (user) => {
+            this.setState({ user })
+        }
+        this.logout = () => {
+            this.setState({ user: {} });
+            this.props.history.push("/")
+        }
+    }
+    componentDidMount() {
+        if (Object.keys(this.state.user) === 0) {
+            this.props.history.push("/")
+        }
     }
 
     render() {
@@ -24,12 +36,12 @@ class Main extends React.Component {
                     <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.uid} />} />
 
                     <Route exact path="/test" render={props => <Chat {...props} />} />
-                    <Route exact path="/login" render={props => <Login {...props} />} />
+                    <Route exact path="/login" render={props => <Login {...props} login={this.login} />} />
                     <Route exact path="/signup" render={props => <Signup {...props} />} />
                     <Route exact path="/chat:id" render={props => <Chat key={props.match.params.id} {...props} />} />
-                    <Route exact path="/verify-email/:token" render={props => <EmailVerification {...props} />} />
-                    
-                    
+                    <Route exact path="/verify-email/:token" render={props => <EmailVerification {...props} />} login={this.login} />
+
+
                     <Route exact path="/blog" render={props => <Blog {...props} />} />
                     <Route exact path="/course" render={props => <Course {...props} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />

@@ -31,7 +31,8 @@ class Login extends React.Component {
       console.log(data)
       apiCallAuth('post', '/signin', data)
         .then((result) => {
-          console.log('Logged In')
+          console.log('Logged In');
+          this.props.login(result);
           return this.props.history.push('/home');
         }).catch((err) => {
           return this.setState({ error: err.response.data.error.message });
