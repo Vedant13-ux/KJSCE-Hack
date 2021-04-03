@@ -10,11 +10,12 @@ import Landing from '../components/Landing'
 import Blog from '../components/Blog'
 import Course from '../components/Course'
 import Questions from '../containers/Auth/newUser'
+import Chats from './Chat/chats'
 
 class Main extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { uid: "60685381b839e9392b6cef67", user: {} }
+        this.state = { user: {} }
         this.login = (user) => {
             this.setState({ user })
             localStorage.setItem("jwtToken", user.token)
@@ -27,7 +28,7 @@ class Main extends React.Component {
     }
     componentDidMount() {
         if (Object.keys(this.state.user) === 0) {
-            this.props.history.push("/")
+            this.props.history.push("/");
         }
     }
 
@@ -36,13 +37,11 @@ class Main extends React.Component {
             <div>
                 <Switch>
                     <Route exact path="/" render={props => <Landing {...props} />} />
-                    <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.uid} />} />
-
-                    <Route exact path="/test" render={props => <Chat {...props} />} />
-                    <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
+                    <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.user._id} />} />
+                    <Route exact path="/login" render={props => <Login login={this.login} {...props} />} />
                     <Route exact path="/signup" render={props => <Signup  {...props} />} />
-                    <Route exact path="/chat:id" render={props => <Chat key={props.match.params.id} {...props} />} />
-                    <Route exact path="/verify-email/:token" render={props => <EmailVerification setUser={this.setUser} {...props} />} />
+                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.uid} {...props} />} />
+                    <Route exact path="/verify-email/:token" render={props => <EmailVerification login={this.login} {...props} />} />
 
 
                     <Route exact path="/blog" render={props => <Blog {...props} />} />
