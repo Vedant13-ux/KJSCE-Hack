@@ -9,7 +9,8 @@ const userScehma = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Appoinment'
         }
-    ]
+    ],
+    role: String
 });
 
 userScehma.methods.comparePassword = async function (password, next) {
