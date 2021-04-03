@@ -13,7 +13,11 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
 });
-
+function youtube_parser(url){
+  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  var match = url.match(regExp);
+  return (match&&match[7].length==11)? match[7] : false;
+}
 export default function MediaCard(props) {
   const classes = useStyles();
 
@@ -24,7 +28,7 @@ export default function MediaCard(props) {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          video={props.data.path}
+          image={"https://img.youtube.com/vi/"+youtube_parser(props.data.path)+"/0.jpg"}
           title={props.data.title}
         />
         <CardContent>
