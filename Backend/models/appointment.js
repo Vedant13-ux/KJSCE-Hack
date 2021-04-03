@@ -13,6 +13,12 @@ const appointmentSchema = new mongoose.Schema({
         ref: 'User'
     },
     feedback: String,
+    messages: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Message'
+        }
+    ]
     
 });
 
