@@ -82,10 +82,7 @@ class ChatApp extends React.Component {
             author:this.props.uid
         };
         socketstore.emit('room-message',{message:newItem,rid:this.props.match.params.id})
-        // this.setState(state => ({
-        //     messages: state.messages.concat(newItem),
-        //     message: ''
-        // }));
+        this.setState({message:''});
     }
 }
 
