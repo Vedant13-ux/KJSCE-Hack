@@ -1,6 +1,6 @@
 import axios from 'axios'
 // import jwtDecode from 'jwt-decode'
-// axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'http://localhost:3001'
 var secureId = null;
 
 // export async function setTokenHeader(token) {
