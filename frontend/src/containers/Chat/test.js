@@ -13,7 +13,7 @@ export default class Chat extends React.Component {
     this.configureSocket = async () => {
       var socket = socketClient(SERVER,{transport:['websocket']});
       console.log("started socket");
-     socket.on("connection", () => {
+     socket.on("yo", () => {
         console.log("connected to server");
       });
       this.setState({socket})
