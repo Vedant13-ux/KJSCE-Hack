@@ -111,8 +111,9 @@
 }
 
 .mediacard {
+  margin-left: 22px;
   padding: 10px;
-  /* width: 22%; */
+  width: 30%;
 }
 
 /* Footer */

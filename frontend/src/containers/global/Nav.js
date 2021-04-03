@@ -17,10 +17,10 @@ function Nav(){
             />
             <nav className="navlink">
                 <ul className="links">
-                    <li><Link to="/">FAQ</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/course">Course</Link></li>
                     <li><Link to="/blog">Blog</Link></li>
-                    <li><Link to="/">Login/SignUp</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                 </ul>
             </nav>
 
