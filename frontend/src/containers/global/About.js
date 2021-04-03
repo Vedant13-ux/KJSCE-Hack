@@ -1,8 +1,9 @@
 import React from 'react';
-import Tree from '../../images/Tree.png';
+import Tree from '../../images/undraw_working_remotely_jh40.svg';
 import '../../index2.css';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+
 
 export default function About() {
     return (
@@ -13,6 +14,9 @@ export default function About() {
                     <p>
                     No matter what's troubling you,
                      get the support you need, right here, right now.
+                    </p>
+                    <p>
+                    Seeking Help is a Sign of  <del>Weakness</del>  STRENGTH.
                     </p>
                     <div className="btn">
                         <Button className="btn_specific"

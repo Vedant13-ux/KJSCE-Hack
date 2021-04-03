@@ -4,23 +4,11 @@ import Logo from '../../images/helping_mind_logo1.png';
 
 function Nav(){
 
-    const [show , handleShow] = useState(false);
+    // const [show , handleShow] = useState(false);
 
-    useEffect(()=>{
-            window.addEventListener("scroll", ()=>{
-                    if(window.scrollY > 100){
-                        handleShow(true);
-                    }else handleShow(false);
-                }
-
-            );
-            return ()=>{
-                window.removeEventListener("scroll");   
-            }
-        }, []);
 
     return(
-        <div className={`navbar ${show && "nav__black"}`}>
+        <div className={"navbar"}>
             <img
                 className="logo"
                 src={Logo}
@@ -28,10 +16,10 @@ function Nav(){
             />
             <nav className="navlink">
                 <ul className="links">
-                    <li>Discussions</li>
-                    <li>About</li>
-                    <li>Blog</li>
-                    <li>Login/SignUp</li>
+                    <li><a href="/">Discussions</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/">Login/SignUp</a></li>
                 </ul>
             </nav>
 
