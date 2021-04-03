@@ -11,9 +11,9 @@ export default class Chat extends React.Component {
       conversation: null,
     };
     this.configureSocket = async () => {
-      var socket = socketClient(SERVER,{query:{id:this.props.currentUser.user._id}});
+      var socket = socketClient(SERVER,{transport:['websocket']});
       console.log("started socket");
-      await socket.on("connection", () => {
+     socket.on("connection", () => {
         console.log("connected to server");
       });
       this.setState({socket})
