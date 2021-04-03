@@ -11,8 +11,7 @@ import {Link} from 'react-router-dom'
 
 function Experts() {
     return (
-        <div>
-            <hr className="expertsHr"></hr>
+        <div className="expertsSec">
             <h1 className="experts">Meet our experts</h1>
             <div className="expertDemo">
                 <div className="expertCard"><ExpertCard /></div> 
