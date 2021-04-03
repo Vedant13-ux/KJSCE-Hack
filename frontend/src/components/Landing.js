@@ -3,8 +3,8 @@ import Nav from '../containers/global/Nav';
 import About from '../containers/global/About';
 import QnA from './QnA';
 import '../index2.css';
-import Course from './Course';
-import Blog from './Blog';
+import BlogContent from './BlogContent';
+
 
 function Landing(){
     return (
@@ -12,6 +12,7 @@ function Landing(){
             <Nav />
             <About />
             <QnA />
+            
         </div>
     )
 }
