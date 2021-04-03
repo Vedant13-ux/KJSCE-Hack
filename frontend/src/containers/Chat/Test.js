@@ -10,8 +10,8 @@ class ChatApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            contacts: [{ text: 'John Smith' }, { text: 'Molly Watt' }, { text: 'Ivan Mackay' }],
-            messages: [{ id: '1', text: 'Hi Molly!', me: true }, { id: '2', text: 'Hey, how are you doing?', me: false }, { id: '3', text: 'It\'s been a while', me: false }, { id: '4', text: 'Yes it is!', me: true }, { id: '5', text: 'Have you ever heard of lorem ipsum?', me: true }, { id: '6', text: 'No, what is it?', me: false }, { id: '7', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', me: true }],
+            contacts: [],
+            messages: [], 
             message: '',
             conversations: [],
             socket: null
@@ -24,8 +24,14 @@ class ChatApp extends React.Component {
             socket.on("yo", () => {
                 console.log("connected to server");
             });
+            socket.on('new-messr',m=>{
+                console.log(m)
+                let tilln=this.state.messages
+                tilln.push(m)
+                this.setState({messages:tilln})
+            })
             socket.on('get-rmess',m=>{
-                this.setState({messages:m})
+                this.setState({messages:m.messages,contacts:m.counsellor})
                 console.log(m)
             })
             socket.emit("join-room",this.props.match.params.id)
@@ -50,7 +56,7 @@ class ChatApp extends React.Component {
                     </div>
                     <div className="messages">
                         <div className="messages-history">
-                            <MessagesHistory items={this.state.messages} />
+                            <MessagesHistory uid={this.props.uid} items={this.state.messages} />
                         </div>
                         <form className="messages-inputs" onSubmit={this.handleSubmit}>
                             <input type="text" placeholder="Send a message" onChange={this.handleChange} value={this.state.message} />
@@ -73,25 +79,26 @@ class ChatApp extends React.Component {
         }
         const newItem = {
             text: this.state.message,
-            id: Date.now(),
-            me: true
+            author:this.props.uid
         };
-        this.setState(state => ({
-            messages: state.messages.concat(newItem),
-            message: ''
-        }));
+        socketstore.emit('room-message',{message:newItem,rid:this.props.match.params.id})
+        this.setState({message:''});
     }
 }
 
 class MessagesHistory extends React.Component {
+    
     render() {
-        return [].concat(this.props.items).reverse().map(item => (
-            <div className={"message " + (item.me ? "me" : "")} key={item.id}>
+        return [].concat(this.props.items).reverse().map(item =>{
+            return (
+            <div className={"message " + (item.author._id==this.props.uid ? "me" : "")} key={item.id}>
+                
                 <div className="message-body">
+                <h5 style={{margin:"0px"}}>{item.author.name}</h5>
                     {item.text}
                 </div>
             </div>
-        ));
+        )});
     }
 }
 
@@ -101,7 +108,7 @@ class ContactList extends React.Component {
             <ul>
                 {this.props.items.map(item => (
                     <li>
-                        {item.text}
+                        {item.name}
                     </li>
                 ))}
             </ul>
