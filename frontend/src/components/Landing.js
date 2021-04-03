@@ -4,6 +4,7 @@ import About from '../containers/global/About';
 import QnA from './QnA';
 import '../index2.css';
 import Course from './Course';
+import Blog from './Blog';
 
 function Landing(){
     return (
@@ -12,6 +13,7 @@ function Landing(){
             <About />
             <Course />
             <QnA />
+            <Blog />
         </div>
     )
 }
