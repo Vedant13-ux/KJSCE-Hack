@@ -62,7 +62,7 @@ export default function ExpertCard() {
 
       <CardActions disableSpacing>
         <Typography variant="body2" color="textSecondary" component="p">
-            <a href="/">Read More</a>
+            <a href="/">Appointment</a>
         </Typography>
       </CardActions>
     </Card>

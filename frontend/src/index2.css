@@ -141,6 +141,7 @@
 
 .expertsSec {
   background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(226, 241, 253));
+  padding-top: 7px;
 }
 
 .expertDemo {
