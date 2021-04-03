@@ -18,7 +18,7 @@ var secureId = null;
 
 export async function apiCall(method, path, data) {
     return new Promise((resolve, reject) => {
-        return axios[method](`/api/${secureId}${path}`, data)
+        return axios[method](`/api/${path}`, data)
             .then(res => {
                 return resolve(res.data);
             }).catch(err => {
