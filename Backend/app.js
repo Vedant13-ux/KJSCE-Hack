@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.disable('etag').disable('x-powered-by');
-
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -25,12 +25,12 @@ server.listen(process.env.PORT ||  3001, process.env.IP, () => {
     console.log('Server Listening on Port 3001')
 })
 require('./Chat')(io);
-
+require('./seed')();
 // app.listen(process.env.PORT || 3001, process.env.IP, () => {
 //     console.log('Server Listening on Port 3001')
 // })
 const errorHandler = require('./handlers/errorHandler');
-require('dotenv').config();
+
 
 
 app.use(bodyParser.json());
