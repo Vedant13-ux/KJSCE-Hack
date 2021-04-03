@@ -17,7 +17,7 @@ function Nav(){
             <nav className="navlink">
                 <ul className="links">
                     <li><a href="/">FAQ</a></li>
-                    <li><a href="/">Course</a></li>
+                    <li><a href="/course">Course</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/">Login/SignUp</a></li>
                 </ul>

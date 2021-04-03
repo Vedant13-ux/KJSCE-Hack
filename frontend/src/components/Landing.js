@@ -11,9 +11,7 @@ function Landing(){
         <div className="landing">
             <Nav />
             <About />
-            <Course />
             <QnA />
-            <Blog />
         </div>
     )
 }
