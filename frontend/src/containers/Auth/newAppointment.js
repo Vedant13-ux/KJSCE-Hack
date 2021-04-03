@@ -71,7 +71,7 @@ class RegisterStudents extends React.Component {
                     </Grid>
                     <form onSubmit={this.handleSubmit} className="ui form" id="questionBlock">
                         <div className="field">
-                            <label></label>
+                            <label>In which premises, did you face Bullying?</label>
                             <input type="text" name="first-name" placeholder="First Name" />
                         </div>
                         <div className="field">
