@@ -36,11 +36,11 @@ app.use(cors());
 // ROutes
 
 const authRoutes = require('./routes/auth');
-
+const appROutes = require('./routes/appointment');
 
 // // Incuding Routes
 app.use('/api/auth', authRoutes);
-
+app.use('/api/appointment', appROutes);
 
 app.use((req, res, next) => {
     let err = new Error('Not Found');

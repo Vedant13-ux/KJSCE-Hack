@@ -3,7 +3,7 @@ import Tree from '../../images/undraw_working_remotely_jh40.svg';
 import '../../index2.css';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-
+import {Link} from 'react-router-dom'
 
 export default function About() {
     return (
@@ -19,11 +19,11 @@ export default function About() {
                     Seeking Help is a Sign of  <del>Weakness</del>  STRENGTH.
                     </p>
                     <div className="btn">
-                        <Button className="btn_specific"
+                        <Link to="/chats"><Button className="btn_specific"
                         variant="outlined"
                         color="primary">
                             Chat Now!
-                        </Button>
+                        </Button></Link>
                         <Button className="btn_specific"
                          variant="outlined"
                           color="primary">

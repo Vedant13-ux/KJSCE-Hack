@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogCard from './BlogCard';
 import Nav from '../containers/global/Nav';
+import Footer from '../containers/global/Footer'
 
 function Blog() {
     return (
@@ -18,7 +19,9 @@ function Blog() {
                 <BlogCard />           
                 <BlogCard />
                 <BlogCard />
+                
             </div>
+            
         </div>
     )
 }
