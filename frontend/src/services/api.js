@@ -29,7 +29,7 @@ export async function apiCall(method, path, data) {
 export function apiCallAuth(method, path, data) {
 
     return new Promise((resolve, reject) => {
-        return axios[method](path, data)
+        return axios[method]("/api/auth"+path, data)
             .then(res => {
                 return resolve(res.data);
             }).catch(err => {
