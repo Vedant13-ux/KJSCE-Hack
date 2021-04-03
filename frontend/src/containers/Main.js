@@ -47,12 +47,9 @@ class Main extends React.Component {
 
                     <Route exact path="/blog" render={props => <Blog {...props} />} />
                     <Route exact path="/course" render={props => <Course {...props} />} />
-<<<<<<< HEAD
                     <Route exact path="/newuser" render={props => <Questions {...props} />} />
                     <Route exact path="/blogcontent" render={props => <BlogContent {...props} />} />
-=======
                     <Route exact path="/newappointment" render={props => <Questions {...props} />} />
->>>>>>> 166455493d5dad35a8c627015f3133d128247aa3
 
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>
