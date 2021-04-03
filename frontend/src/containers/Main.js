@@ -12,6 +12,10 @@ import Course from '../components/Course'
 import Questions from './Auth/newAppointment'
 import Chats from './Chat/chats'
 import ExpertsPage from '../components/ExpertsPage'
+<<<<<<< HEAD
+=======
+import BlogContent from '../components/BlogContent'
+>>>>>>> fe2fd05ecef0a296342dfee7cb73a3894fd82e96
 
 class Main extends React.Component {
     constructor(props) {
