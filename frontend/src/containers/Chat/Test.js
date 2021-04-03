@@ -47,7 +47,7 @@ class ChatApp extends React.Component {
             <div id="chat">
                 <Navbar></Navbar>                <div class="app">
                     <div class="contact-list">
-                        <h1 class="title">My messages</h1>
+                        <h1 class="title">In The Session</h1>
                         <ContactList items={this.state.contacts} />
                     </div>
                     <div class="messages">
