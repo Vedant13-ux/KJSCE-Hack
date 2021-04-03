@@ -3,6 +3,7 @@ import BlogCard from './BlogCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav';
 import Footer from '../containers/global/Footer'
+import BlogContent from './BlogContent';
 
 
 function Blog() {
@@ -10,20 +11,14 @@ function Blog() {
         <div>
             <Nav />
             <div className="course_card">
-
-                {/* {video.map((d, i)=>{
-                    return(
-                        <MediaCard key={i} data={d}></MediaCard>
-                    );
-                })} */}
-
-                <BlogCard className="blogCard"/>
-                <BlogCard className="blogCard"/>           
-                <BlogCard className="blogCard"/>
-                <BlogCard className="blogCard"/>
-                
+                <div className="blogCard"><BlogCard /></div> 
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
+                <div className="blogCard"><BlogCard /></div>
             </div>
-            
+            <Footer />
         </div>
     )
 }
