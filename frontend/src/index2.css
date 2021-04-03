@@ -16,11 +16,6 @@
   transition: all 0.5s;
 }
 
-.nav__black {
-  background-color: rgba(0, 0, 0, 0.897) f;
-  opacity: 1;
-}
-
 .navlink {
   width: 50%;
   margin-right: 30px;
@@ -118,4 +113,27 @@
 .mediacard {
   padding: 10px;
   /* width: 22%; */
+}
+
+/* Footer */
+
+.footer_container {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.887);
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.footer-col2 {
+  width: 30%;
+  align-items: center;
+}
+
+.copyright {
+  color: #fff;
 }
