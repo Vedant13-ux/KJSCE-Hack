@@ -11,7 +11,6 @@ function Landing(){
         <div className="landing">
             <Nav />
             <About />
-            <QnA />
             <Footer />
         </div>
     )
