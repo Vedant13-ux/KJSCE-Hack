@@ -1,12 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Main from './Main'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      
-    </div>
-  );
-}
+    <Router>
+      <div>
+        <Main />
+      </div>
+    </Router>
+  )
+
+};
+
+
+
 
 export default App;
