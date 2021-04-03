@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* ***********************Questions CSS************************ */
+#questionBlock .field input[type="text"]{
+  max-width: 450px;
+  width: 95%;
+}

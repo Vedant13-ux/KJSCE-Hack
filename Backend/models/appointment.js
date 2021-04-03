@@ -18,8 +18,14 @@ const appointmentSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Message'
         }
-    ]
-    
+    ],
+    followUps: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Appointment'
+        }
+    ],
+
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);

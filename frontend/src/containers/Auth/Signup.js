@@ -32,13 +32,9 @@ class RegisterStudents extends React.Component {
             const {
                 name,
                 email,
-                phoneNumber,
-                password,
-                year,
-                role,
-                dept,
+                password
             } = this.state;
-            const data = { name, email, phoneNumber, password, year, role, dept };
+            const data = { name, email, password };
             apiCallAuth("post", "/signup", data)
                 .then(async (response) => {
                     console.log(response);
@@ -92,17 +88,7 @@ class RegisterStudents extends React.Component {
                             onChange={this.handleChange}
                             required
                         />
-                        {this.props.role === "Student" && (
-                            <TextField
-                                fullWidth
-                                disabled={this.state.disabled}
-                                label="Phone Number"
-                                name="phoneNumber"
-                                placeholder="Enter your phone number"
-                                onChange={this.handleChange}
-                                required
-                            />
-                        )}
+                      
 
 
                         <TextField

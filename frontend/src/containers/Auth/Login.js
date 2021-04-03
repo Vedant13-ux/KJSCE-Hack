@@ -31,9 +31,9 @@ class Login extends React.Component {
       console.log(data)
       apiCallAuth('post', '/signin', data)
         .then((result) => {
-          console.log('Logged In')
-          this.props.setUser(result)
-          return this.props.history.push('/');
+          console.log('Logged In');
+          this.props.login(result);
+          return this.props.history.push('/home');
         }).catch((err) => {
           return this.setState({ error: err.response.data.error.message });
         })
@@ -48,7 +48,6 @@ class Login extends React.Component {
       margin: "20px auto",
     };
     const avatarStyle = { backgroundColor: "#1bbd7e" };
-    const btnstyle = { margin: "35px 0" };
     const textFieldStyle = { margin: "15px 0" };
     return (
       <Grid>

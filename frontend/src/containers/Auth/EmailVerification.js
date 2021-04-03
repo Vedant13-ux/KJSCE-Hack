@@ -14,12 +14,12 @@ class Emailverification extends Component {
     componentWillMount() {
         console.log(this.state.emailToken)
         apiCallAuth('get', '/verify-email/' + this.props.match.params.token, "")
-            .then(async () => {
+            .then(async (result) => {
                 await this.setState({
                     status: 'Email Verification Completed. Redirecting to KJSCE Connect.'
                 });
-
-                this.props.history.push('/')
+                this.props.history.push('/newuser')
+                this.props.login(result);
 
             })
             .catch(async err => {
