@@ -46,7 +46,7 @@ export default function FloatingButton() {
             autoFocus
             margin="dense"
             id="name"
-            label="Author"
+            label="Title"
             type="name"
             fullWidth
           />
