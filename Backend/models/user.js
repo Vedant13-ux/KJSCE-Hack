@@ -2,7 +2,14 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const userScehma = new mongoose.Schema({
     name: String,
-    password: String
+    password: String,
+    email: String,
+    appointments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Appoinment'
+        }
+    ]
 });
 
 userScehma.methods.comparePassword = async function (password, next) {
