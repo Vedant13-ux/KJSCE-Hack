@@ -133,14 +133,18 @@
   font-family: "Times New Roman", Times, serif;
 }
 
-.expertsHr{
+.expertsHr {
   opacity: 0.3;
   margin-left: 60px;
   margin-right: 60px;
 }
 
 .expertsSec {
-  background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(226, 241, 253));
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    rgb(226, 241, 253)
+  );
   padding-top: 7px;
 }
 
@@ -159,15 +163,15 @@
   margin-bottom: 50px;
 }
 
-.meetExperts{
+.meetExperts {
   width: 200px;
-	height: auto;
-	
-	position: absolute;
-	left: 0;
-	right: 0;
-  	
-	margin: auto;
+  height: auto;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  margin: auto;
 }
 /* Footer */
 
@@ -196,4 +200,6 @@
   color: #fff;
 }
 
-
+.apt {
+  padding-left: 10px;
+}

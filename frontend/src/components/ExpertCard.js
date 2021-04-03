@@ -16,10 +16,12 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { light } from '@material-ui/core/styles/createPalette';
+import '../index2.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    minHeight: 230,
   },
   media: {
     height: 0,
@@ -63,7 +65,7 @@ export default function ExpertCard() {
 
       <CardActions disableSpacing>
         <Typography variant="body2" color="textSecondary" component="p">
-            <a href="/">Appointment</a>
+            <a className="apt" href="/">Appointment</a>
         </Typography>
       </CardActions>
     </Card>
