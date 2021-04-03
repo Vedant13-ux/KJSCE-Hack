@@ -8,8 +8,8 @@ function chat(io){
         socket.emit('yo', null);
         socket.on('join-room',rid=>{
             socket.join(rid)
-            db.Appointment.findById(rid).populate({path:'messages',populate:{path:"author"}}).then(a=>{
-                socket.emit('get-rmess',a.messages)
+            db.Appointment.findById(rid).populate({path:'messages',populate:{path:"author"}}).populate("counsellor").then(a=>{
+                socket.emit('get-rmess',a)
             })
         })
         socket.on('leave-room',rid=>{
