@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    minHeight: 400,
   },
 });
 function youtube_parser(url){
@@ -41,8 +42,8 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Read More
+        <Button  size="small" color="primary">
+          <a href={props.data.path}>Watch Now</a>
         </Button>
       </CardActions>
     </Card>
