@@ -12,7 +12,7 @@ exports.signup = async function (req, res, next) {
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'internbridge99@gmail.com',
+                user: 'openwhen1403@gmail.com',
                 pass: process.env.GMAIL_APP_PASSWORD
             }
         });

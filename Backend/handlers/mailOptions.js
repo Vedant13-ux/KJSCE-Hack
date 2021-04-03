@@ -1,12 +1,12 @@
 function mailOptions(req, process) {
-    return ({
-      from: 'internbridge99@gmail.com',
-      to: req.body.email,
-      subject: 'InternBridge - Verification',
-      text: `
+  return ({
+    from: 'openwhen1403@gmail.com',
+    to: req.body.email,
+    subject: 'Helping Minds - Verification',
+    text: `
               Hello, Thanks for regstering on our site. Please Click on the link bellow to verify your Account.
               http://localhost:3000/verify-email/${req.body.emailToken}`,
-      html: `
+    html: `
               <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
               <html>
               
@@ -446,7 +446,7 @@ function mailOptions(req, process) {
                                 <tr>
     
                                   <td class="headerContent centeredWithBackground" style="color:white !important;border-collapse:collapse;color:#202020;font-family:Arial;font-size:34px;font-weight:bold;line-height:100%;padding:0;text-align:center;vertical-align:middle;background-color:#020c53;padding-bottom:20px;padding-top:20px; border-top-left-radius:30px; border-top-right-radius:30px">
-                                      Intern Bridge
+                                      Helping Minds
                                   </td>
                                 </tr>
                               </table>
@@ -530,7 +530,7 @@ function mailOptions(req, process) {
               
               </html>
            `
-    })
-  }
-  
-  module.exports = mailOptions;
+  })
+}
+
+module.exports = mailOptions;

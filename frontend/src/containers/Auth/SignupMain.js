@@ -4,7 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import RegisterStudents from "./RegisterStudents";
+import Signup from "./Signup";
 import Grid from "@material-ui/core/Grid";
 const Accounts = () => {
     const [value, setValue] = useState(0);
@@ -47,16 +47,15 @@ const Accounts = () => {
                     onChange={handleChange}
                     aria-label="disabled tabs example"
                 >
-                    <Tab label="Student" />
+                    <Tab label="Advisee" />
 
-                    <Tab label="Faculty" />
+                    <Tab label="Advisor" />
                 </Tabs>
                 <TabPanel value={value} index={0}>
-                    {/* <Login handleChange={handleChange} /> */}
-                    <RegisterStudents role="Student" />
+                    <Signup role="advisee" />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <RegisterStudents role="Faculty" />
+                    <Signup role="Counsellor" />
                 </TabPanel>
             </Paper>
         </Grid>
