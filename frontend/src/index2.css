@@ -119,6 +119,10 @@
 
 /* Footer */
 
+.footer {
+  margin-top: 100px;
+}
+
 .footer_container {
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.887);
