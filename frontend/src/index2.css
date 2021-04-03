@@ -155,4 +155,10 @@
   color: #fff;
 }
 
+/* Floationg Button */
 
+.add_icon {
+  position: fixed;
+  margin-left: 1200px;
+  margin-top: 0px;
+}
