@@ -29,7 +29,7 @@ class Main extends React.Component {
                     <Route exact path="/chat:id" render={props => <Chat key={props.match.params.id} {...props} />} />
                     <Route exact path="/verify-email/:token" render={props => <EmailVerification {...props} />} />
                     <Route exact path="/blog" render={props => <Blog {...props} />} />
-                    <Route exact path="/closure" render={props => <Course {...props} />} />
+                    <Route exact path="/course" render={props => <Course {...props} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>
             </div>

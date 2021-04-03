@@ -1,9 +1,12 @@
 import React from 'react';
 import BlogCard from './BlogCard';
+import Nav from '../containers/global/Nav';
 
 function Blog() {
     return (
-        <div className="course_card">
+        <div>
+            <Nav />
+            <div className="course_card">
 
             {/* {video.map((d, i)=>{
                 return(
@@ -15,6 +18,7 @@ function Blog() {
             <BlogCard />           
             <BlogCard />
             <BlogCard />
+        </div>
         </div>
     )
 }

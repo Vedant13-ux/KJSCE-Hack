@@ -1,6 +1,7 @@
 import React from 'react';
 import MediaCard from './MediaCard';
 import '../index2.css';
+import Nav from '../containers/global/Nav'
 
 function Course() {
 
@@ -22,6 +23,9 @@ function Course() {
         }
     ]
     return (
+        
+        <div>
+        <Nav />
         <div className="course_card">
 
             {video.map((d, i)=>{
@@ -30,10 +34,8 @@ function Course() {
                 );
             })}
 
-            {/* <MediaCard />
-            <MediaCard />           
-            <MediaCard /> */}
         </div>
+    </div>
     )
 }
 
