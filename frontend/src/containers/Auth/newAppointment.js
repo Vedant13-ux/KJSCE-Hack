@@ -74,12 +74,12 @@ class RegisterStudents extends React.Component {
                             <label>At which premise, did you face Bullying?</label>
                             <select onChange={this.handleChange} required name="place">
                                 <option value="">Place</option>
-                                <option value="">At School</option>
-                                <option value="">At College</option>
-                                <option value="">At Home</option>
-                                <option value="">On Internet</option>
-                                <option value="">At Workplace</option>
-                                <option value="">Somwhere Else</option>
+                                <option value="At School">At School</option>
+                                <option value="At College">At College</option>
+                                <option value="At Home">At Home</option>
+                                <option value="On Internet">On Internet</option>
+                                <option value="At Workplace">At Workplace</option>
+                                <option value="Somewhere Else">Somewhere Else</option>
 
 
                             </select>

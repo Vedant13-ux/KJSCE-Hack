@@ -28,9 +28,12 @@ class Main extends React.Component {
             localStorage.clear()
         }
     }
-    componentDidMount() {
+    componentWillMount() {
         if (Object.keys(this.state.user) === 0) {
             this.props.history.push("/");
+        }
+        if (localStorage.jwtToken == null) {
+
         }
     }
 
@@ -52,7 +55,6 @@ class Main extends React.Component {
                     <Route exact path="/newuser" render={props => <Questions {...props} />} />
                     <Route exact path="/blogcontent" render={props => <BlogContent {...props} />} />
                     <Route exact path="/newappointment" render={props => <Questions {...props} />} />
-
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>
             </div>
