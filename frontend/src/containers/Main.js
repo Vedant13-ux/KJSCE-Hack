@@ -19,7 +19,7 @@ import { apiCallAuth } from '../services/api'
 class Main extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { user: {} };
+        this.state = { user: {},authenticated:false };
         this.setToken = (token) => {
             localStorage.setItem("jwtToken", token)
         }
@@ -27,17 +27,17 @@ class Main extends React.Component {
             if (user.token != null) {
                 this.setToken(user.token);
             }
-            return this.setState({ user });
+            return this.setState({ user ,authenticated:true});
         }
         this.logout = () => {
-            this.setState({ user: {} });
+            this.setState({ user: {},authenticated:false });
             this.props.history.push("/")
             localStorage.clear()
         }
     }
     async componentWillMount() {
 
-        if (Object.keys(this.state.user).length === 0) {
+        if (!this.state.user.authenticated) {
             this.props.history.push("/");
         }
         if ((localStorage.jwtToken)) {
@@ -65,9 +65,9 @@ class Main extends React.Component {
     }
 
     render() {
-        if (Object.keys(this.state.user).length === 0) {
-            return <div></div>
-        }
+        // if (!this.state.user.authenticated) {
+        //     return <div></div>
+        // }
         return (
             <div>
                 <Switch>
