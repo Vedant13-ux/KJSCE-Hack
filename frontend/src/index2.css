@@ -92,10 +92,14 @@
 .qna {
   overflow-x: hidden;
   padding-left: 50px;
-  width: 97%;
+  width: 96.3%;
   padding-top: 80px;
   padding-bottom: 100px;
-  background: radial-gradient(white, lightgray);
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    rgb(229, 226, 253)
+  );
   /* background-color: rgb(17, 99, 250); */
 }
 
