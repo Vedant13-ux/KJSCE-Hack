@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogCard from './BlogCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav';
@@ -6,17 +6,20 @@ import Footer from '../containers/global/Footer'
 import FloatingButtons from './FloatingButton';
 
 
-function Blog() {
+function Blog(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     return (
         <div className="course">
-            <Nav />
+            <Nav user={props.user} logout={props.logout} />
             <div className="course_wrap">
                 <div className="course_title">
                     <h1>----- Blog -----</h1>
                 </div>
-                
+
                 <div className="course_card">
-                    <div className="blogCard"><BlogCard /></div> 
+                    <div className="blogCard"><BlogCard /></div>
                     <div className="blogCard"><BlogCard /></div>
                     <div className="blogCard"><BlogCard /></div>
                     <div className="blogCard"><BlogCard /></div>
@@ -26,8 +29,8 @@ function Blog() {
                 </div>
 
             </div>
-            
-            
+
+
             <Footer />
         </div>
     )

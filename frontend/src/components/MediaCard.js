@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -21,8 +21,14 @@ function youtube_parser(url){
   var match = url.match(regExp);
   return (match&&match[7].length==11)? match[7] : false;
 }
+
+function truncate(str, n){
+  return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+}
 export default function MediaCard(props) {
   const classes = useStyles();
+
+  
 
   return (
     <Card className={classes.root}>
@@ -39,14 +45,19 @@ export default function MediaCard(props) {
             {props.data.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {props.data.description}
+            {/* {props.data.description} */}
+            {truncate(props.data.description, 100)}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button  variant="outlined" size="small" color="primary">
-          <a className="watch_btn" href={props.data.path} target="blank">Watch Now</a>
-        </Button>
+        <div className="bottom_btn">
+          <Button 
+            variant="outlined" size="small" color="primary">
+            <a className="watch_btn" href={props.data.path} target="_blank">Watch Now</a>
+          </Button>
+        </div>
+        
       </CardActions>
     </Card>
   );
