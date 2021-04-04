@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +54,7 @@ export default function BlogCard(props) {
 
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-        {props.blog.content.substring(0,150)} <Link>....Read More</Link>
+          {props.blog.content.substring(0, 150)} <Link>....Read More</Link>
         </Typography>
       </CardContent>
 
@@ -68,8 +68,8 @@ export default function BlogCard(props) {
         <Typography variant="body2" color="textSecondary" component="p">
           {/* <a href="/">Read More</a> */}
           <Button variant="outlined" size="small" color="primary">
-            Read More
-            </Button>
+            <Link to={"/blogcontent/" + props.blog._id}>Read More</Link>
+          </Button>
         </Typography>
       </CardActions>
     </Card>
