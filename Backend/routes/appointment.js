@@ -48,6 +48,8 @@ router.post("/newAppointment", async (req, res, next) => {
         }
     }
     let app = await db.Appointment.create(data);
+    user.appointments.splice(0,0,app)
+    user.save()
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -66,7 +68,7 @@ router.post("/newAppointment", async (req, res, next) => {
         </div>
         <div>The link for the appointment is http://localhost:3000/chat/${app._id}</div>
         <ul>Details:
-            <li>Place of Bullying : ${req.body / place}</li>
+            <li>Place of Bullying : ${req.body.place}</li>
             <li>Experience : ${req.body.experience}</li>
 
         </ul>
@@ -79,8 +81,12 @@ router.post("/newAppointment", async (req, res, next) => {
         console.log('Message Sent : %s', info.messageId);
         console.log('Preview URL : %s', info.getTestMessageURL(info));
     });
-    let appointment = await db.Appointment.findById(app._id).populate('counsellor', 'name _id email')
-    return res.send(appointment);
+    db.Appointment.findById(app._id).populate('counsellor', 'name _id email').then(a=>{
+        return res.send(true);
+    }
+        
+    ).catch(e=>{return res.send(e);})
+    
 
 })
 

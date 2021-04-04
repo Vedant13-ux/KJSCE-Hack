@@ -34,6 +34,7 @@ class RegisterStudents extends React.Component {
             apiCall("post", "/appointment/newAppointment", data)
                 .then(async (response) => {
                     console.log(response);
+                    if (response) this.props.history.push("/chats")
                     return await this.setState({ error: '' });
                 })
                 .catch((err) => {
