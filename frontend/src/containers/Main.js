@@ -37,8 +37,6 @@ class Main extends React.Component {
         }
     }
     async componentWillMount() {
-
-
         if ((localStorage.jwtToken)) {
             console.log('Token is there')
             var userId = '';

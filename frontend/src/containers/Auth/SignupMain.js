@@ -55,7 +55,7 @@ const Accounts = () => {
                     <Signup role="advisee" />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <Signup role="Counsellor" />
+                    <Signup role="advisor" />
                 </TabPanel>
             </Paper>
         </Grid>
