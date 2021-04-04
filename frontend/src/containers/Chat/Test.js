@@ -31,7 +31,7 @@ class ChatApp extends React.Component {
                 this.setState({ messages: tilln })
             })
             socket.on('get-rmess', m => {
-                this.setState({ messages: m.messages, contacts: m.counsellor })
+                this.setState({ messages: m.messages, contacts: [m.counsellor,m.advisee] })
                 console.log(m)
             })
             socket.emit("join-room", this.props.match.params.id)
