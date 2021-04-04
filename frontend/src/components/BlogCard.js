@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BlogCard() {
+export default function BlogCard(props) {
   const classes = useStyles();
-//   const [expanded, setExpanded] = React.useState(false);
+  //   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     // setExpanded(!expanded);
@@ -39,7 +40,7 @@ export default function BlogCard() {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            {props.blog.author.name.slice(0, 1)}
           </Avatar>
         }
         // action={
@@ -47,13 +48,13 @@ export default function BlogCard() {
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title="Add Title here"
-        subheader="Enter day edited here"
+        title={props.blog.author.name}
+        subheader={new Date(props.blog.created).toDateString()}
       />
-    
+
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Add Short Description of your code here
+        {props.blog.content.substring(0,150)} <Link>....Read More</Link>
         </Typography>
       </CardContent>
 
@@ -65,9 +66,9 @@ export default function BlogCard() {
           <ShareIcon />
         </IconButton>
         <Typography variant="body2" color="textSecondary" component="p">
-            {/* <a href="/">Read More</a> */}
-            <Button  variant="outlined" size="small" color="primary">
-              Read More
+          {/* <a href="/">Read More</a> */}
+          <Button variant="outlined" size="small" color="primary">
+            Read More
             </Button>
         </Typography>
       </CardActions>
