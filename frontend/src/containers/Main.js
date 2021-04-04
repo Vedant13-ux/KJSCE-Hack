@@ -71,19 +71,19 @@ class Main extends React.Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/" render={props => <Landing {...props} />} />
-                    <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.user._id} />} />
+                    <Route exact path="/" render={props => <Landing {...props} user={this.state.user} />} />
+                    <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.user._id} user={this.state.user} />} />
                     <Route exact path="/login" render={props => <Login login={this.login} {...props} />} />
                     <Route exact path="/signup" render={props => <Signup  {...props} />} />
-                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.user._id} {...props} />} />
-                    <Route exact path="/verify-email/:token" render={props => <EmailVerification login={this.login} {...props} />} />
+                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.user._id} {...props} user={this.state.user} />} />
+                    <Route exact path="/verify-email/:token" render={props => <EmailVerification login={this.login} {...props} user={this.state.user} />} />
 
 
-                    <Route exact path="/blog" render={props => <Blog {...props} />} />
-                    <Route exact path="/experts" render={props => <ExpertsPage {...props} />} />
-                    <Route exact path="/course" render={props => <Course {...props} />} />
-                    <Route exact path="/newappointment" render={props => <Questions {...props} />} />
-                    <Route exact path="/blogcontent/:id" render={props => <BlogContent {...props} />} />
+                    <Route exact path="/blog" render={props => <Blog {...props} user={this.state.user} />} />
+                    <Route exact path="/experts" render={props => <ExpertsPage {...props} user={this.state.user} />} />
+                    <Route exact path="/course" render={props => <Course {...props} user={this.state.user} />} />
+                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} />} />
+                    <Route exact path="/blogcontent/:id" render={props => <BlogContent {...props} user={this.state.user} />} />
                     <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>

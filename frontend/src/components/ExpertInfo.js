@@ -2,11 +2,11 @@ import Nav from '../containers/global/Nav';
 import React from 'react';
 import Footer from '../containers/global/Footer'
 
-function ExportInfo(){
+function ExportInfo(props) {
     return (
         <div>
-            <Nav />
-            
+            <Nav user={props.user} history={props.history} />
+
             <div class="ui piled segment">
                 <h4 class="ui header">A header</h4>
                 <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>

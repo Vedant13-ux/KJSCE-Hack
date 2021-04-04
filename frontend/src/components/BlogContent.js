@@ -25,7 +25,7 @@ class BlogContent extends React.Component {
         }
         return (
             <div>
-                <Nav />
+                <Nav user={this.props.user} history={this.props.history}/>
 
                 <div class="ui piled segment">
                     <h4 class="ui header">A header</h4>
