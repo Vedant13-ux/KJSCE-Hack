@@ -2,6 +2,11 @@ import React from 'react';
 import '../../index2.css';
 import Logo from '../../images/helping_mind_logo1.png';
 import { Link } from 'react-router-dom';
+import Avatar from "@material-ui/core/Avatar";
+import { makeStyles } from "@material-ui/core/styles";
+import { red } from "@material-ui/core/colors";
+
+
 
 class Nav extends React.Component {
 
@@ -30,10 +35,20 @@ class Nav extends React.Component {
                             <li><Link to="/login">Login</Link></li>
                         }
                         {Object.keys(this.state.user).length !== 0 &&
-                            <li style={{ display: 'inline-flex', alignItems: 'center' }}>
-                                <img style={{ width: '50px', height: '50p', borderRadius: '50%' }} alt=""></img>
-                                <div>{this.state.user.name}</div>
-                            </li>
+                            <div>
+                                <li style={{ display: 'inline-flex', alignItems: 'center' }}>
+                                    <Avatar
+                                        style={{ marginRight: '5px' }}
+                                        aria-label="recipe"
+                                    >
+                                        {this.props.user.name.slice(0, 1)}
+                                    </Avatar>
+                                    <div>{this.state.user.name}</div>
+                                </li>
+                                <li>
+                                    Logout
+                                </li>
+                            </div>
                         }
                     </ul>
                 </nav>
