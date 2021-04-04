@@ -171,6 +171,62 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>What is Cyberbullying?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          Online bullying, or cyberbullying, occurs frequently to teens using the Internet, cell phones or other devices. These teens often experience texts or images intended to hurt or embarrass them. Almost half of all American teens are victims of cyber bullying. Whether you’ve been a victim of cyberbullying or know someone who has been cyberbullied, there are steps you and your friends can take to stop cyberbullying and stay cyber-safe.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>How are people cyberbullied?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          Cyberbullying occurs when an individual uses the Internet or another form of technology to harm other people, in a deliberate, repeated, and hostile manner. In some cases a person may pretend that they are another person online to trick others. They could spread lies and rumors about victims, trick people into revealing personal information, send or forward mean text messages, and post pictures of victims without their consent.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>Is bullying the same as cyberbullying? What makes them different?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          While bullying occurs as a face-to-face confrontation, cyberbullying occurs online and involves the use of technologies. Cyberbullying can be even more vicious than bullying since cyberbullying can occur repeatedly in front of a massive online audience, with the cyberbully’s identity unknown, while the victim feels helpless because the attacks can come from several different online sources day in and day out.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>How can I prevent cyberbullying and stay cyber-safe?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          You can refuse to pass along cyberbullying messages. Tell friends to stop cyberbullying, block communication with cyberbullies, and report cyberbullying to a trusted adult. To stay cyber-safe, never post or share your personal information online or your friends’ personal information (this includes your full name, address, telephone number, school name, parents’ names or credit card number). Never share your Internet passwords with anyone and never meet face-to-face with someone you only met online.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 }
