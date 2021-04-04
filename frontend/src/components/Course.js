@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MediaCard from './MediaCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav'
 import Footer from '../containers/global/Footer';
 
 function Course(props) {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     const video = [
         {
             "title": "Reduce Stress",

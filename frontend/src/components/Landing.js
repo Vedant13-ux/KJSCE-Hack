@@ -6,6 +6,9 @@ import Experts from './Experts'
 
 
 function Landing(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     return (
         <div className="landing">
             <Nav user={props.user} logout={props.logout} />
