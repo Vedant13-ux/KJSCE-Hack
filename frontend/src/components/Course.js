@@ -58,7 +58,7 @@ function Course() {
             <Nav />
             <div className="course_wrap">
                 <div className="course_title">
-                    <h1>----- Tip & Tricks -----</h1>
+                    <h1>----- Course -----</h1>
                 </div>
                 
                 <div className="course_card">
