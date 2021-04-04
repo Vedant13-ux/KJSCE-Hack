@@ -14,7 +14,7 @@ function Landing(props) {
         <div className="landing">
             <Nav user={props.user} logout={props.logout} />
             <About />
-            <Experts />
+            {/* <Experts /> */}
             <Footer />
         </div>
     )
