@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ExpertCard from './ExpertCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav';
 import Footer from '../containers/global/Footer'
 import ExpertInfo from './ExpertInfo';
 function ExpertsPage() {
+    useEffect(()=> {
+        window.scrollTo(0, 0);
+    });
     return (
         
         <div className="course">

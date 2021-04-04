@@ -31,16 +31,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Database
-// require('./models/index');
-// require('./seedDB')();
+require('./models/index');
+
 // ROutes
 
 const authRoutes = require('./routes/auth');
-const appROutes = require('./routes/appointment');
+const appRoutes = require('./routes/appointment');
+const blogRoutes = require('./routes/blog');
+
 
 // // Incuding Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/appointment', appROutes);
+app.use('/api/appointment', appRoutes);
+app.use('/api/blog', blogRoutes);
+
 
 app.use((req, res, next) => {
     let err = new Error('Not Found');
