@@ -5,12 +5,12 @@ const appointmentSchema = new mongoose.Schema({
         default: Date.now
     },
     time: String,
-    counsellor: [
+    counsellor: 
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         }
-    ],
+    ,
     advisee: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

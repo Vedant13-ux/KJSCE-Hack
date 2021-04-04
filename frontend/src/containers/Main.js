@@ -19,7 +19,7 @@ import { apiCallAuth } from '../services/api'
 class Main extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { user: {}, authenticated: false };
+        this.state = { user: {}, authenticated: false,start:true };
         this.setToken = (token) => {
             localStorage.setItem("jwtToken", token)
         }
@@ -27,29 +27,29 @@ class Main extends React.Component {
             if (user.token != null) {
                 this.setToken(user.token);
             }
-            return this.setState({ user, authenticated: true });
+            return this.setState({ user, authenticated: true,start:false });
         }
         this.logout = () => {
-            this.setState({ user: {}, authenticated: false });
+            this.setState({ user: {}, authenticated: false,start:false });
             this.props.history.push("/")
             localStorage.clear()
         }
     }
     async componentWillMount() {
 
-        if (!this.state.user.authenticated) {
-            this.props.history.push("/");
-        }
+        
         if ((localStorage.jwtToken)) {
             console.log('Token is there')
             var userId = '';
             try {
                 userId = await jwtDecode(localStorage.jwtToken)['_id'];
                 console.log(userId);
-                await apiCallAuth('get', '/user/' + userId, '')
+                apiCallAuth('get', '/user/' + userId, '')
                     .then((result) => {
                         this.login(result)
+                        console.log(this.state.user);
                     }).catch((err) => {
+                        this.setState({start:false})
                         console.log(err);
                     });
 
@@ -59,15 +59,16 @@ class Main extends React.Component {
                 this.props.history.push('/');
             }
         } else {
+            this.setState({start:false})
             this.props.history.push('/');
         }
-        console.log(this.state.user);
+        
     }
 
     render() {
-        // if (!this.state.user.authenticated) {
-        //     return <div></div>
-        // }
+        if (this.state.start) {
+            return <div></div>
+        }
         return (
             <div>
                 <Switch>
