@@ -15,6 +15,7 @@ class Blog extends React.Component {
         }
     }
     componentDidMount() {
+        window.scrollTo(0, 0);
         apiCall('get', '/blog/allBlogs', '')
             .then((blogs) => {
                 this.setState({ blogs })
