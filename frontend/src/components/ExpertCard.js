@@ -17,6 +17,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { light } from '@material-ui/core/styles/createPalette';
 import '../index2.css';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,9 +66,9 @@ export default function ExpertCard() {
       </CardContent>
 
       <CardActions disableSpacing>
-        <Typography variant="body2" color="textSecondary" component="p">
-            <a className="apt" href="/">Appointment</a>
-        </Typography>
+      <Button  variant="outlined" size="small" color="primary">
+            <a className="watch_btn" href="#" target="_blank">Watch Now</a>
+          </Button>
       </CardActions>
     </Card>
   );

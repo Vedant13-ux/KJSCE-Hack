@@ -44,9 +44,11 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button  variant="outlined" size="small" color="primary">
-          <a className="watch_btn" href={props.data.path} target="blank">Watch Now</a>
-        </Button>
+        <div className="bottom_btn">
+          <Button  variant="outlined" size="small" color="primary">
+            <a className="watch_btn" href={props.data.path} target="_blank">Watch Now</a>
+          </Button>
+        </div>
       </CardActions>
     </Card>
   );
