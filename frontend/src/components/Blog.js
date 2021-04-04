@@ -12,7 +12,7 @@ function Blog(props) {
     });
     return (
         <div className="course">
-            <Nav user={props.user} history={props.history} />
+            <Nav user={props.user} logout={props.logout} />
             <div className="course_wrap">
                 <div className="course_title">
                     <h1>----- Blog -----</h1>

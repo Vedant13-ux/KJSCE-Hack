@@ -57,7 +57,7 @@ function Course(props) {
         // </div>
 
         <div className="course">
-            <Nav user={props.user} history={props.history} />
+            <Nav user={props.user} logout={props.logout} />
             <div className="course_wrap">
                 <div className="course_title">
                     <h1>----- Course -----</h1>

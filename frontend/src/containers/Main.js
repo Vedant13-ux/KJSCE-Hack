@@ -19,7 +19,7 @@ import { apiCallAuth } from '../services/api'
 class Main extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { user: {}, authenticated: false,start:true };
+        this.state = { user: {}, authenticated: false, start: true };
         this.setToken = (token) => {
             localStorage.setItem("jwtToken", token)
         }
@@ -27,17 +27,17 @@ class Main extends React.Component {
             if (user.token != null) {
                 this.setToken(user.token);
             }
-            return this.setState({ user, authenticated: true,start:false });
+            return this.setState({ user, authenticated: true, start: false });
         }
         this.logout = () => {
-            this.setState({ user: {}, authenticated: false,start:false });
+            this.setState({ user: {}, authenticated: false, start: false });
             this.props.history.push("/")
             localStorage.clear()
         }
     }
     async componentWillMount() {
 
-        
+
         if ((localStorage.jwtToken)) {
             console.log('Token is there')
             var userId = '';
@@ -49,7 +49,7 @@ class Main extends React.Component {
                         this.login(result)
                         console.log(this.state.user);
                     }).catch((err) => {
-                        this.setState({start:false})
+                        this.setState({ start: false })
                         console.log(err);
                     });
 
@@ -59,10 +59,10 @@ class Main extends React.Component {
                 this.props.history.push('/');
             }
         } else {
-            this.setState({start:false})
+            this.setState({ start: false })
             this.props.history.push('/');
         }
-        
+
     }
 
     render() {
@@ -72,20 +72,20 @@ class Main extends React.Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/" render={props => <Landing {...props} user={this.state.user} />} />
-                    <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.user._id} user={this.state.user} />} />
+                    <Route exact path="/" render={props => <Landing {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/chat/:id" render={props => <Chat key={props.match.params.id} {...props} uid={this.state.user._id} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="/login" render={props => <Login login={this.login} {...props} />} />
                     <Route exact path="/signup" render={props => <Signup  {...props} />} />
-                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.user._id} {...props} user={this.state.user} />} />
+                    <Route exact path="/chats" render={props => <Chats key={props.match.params.id} uid={this.state.user._id} {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="/verify-email/:token" render={props => <EmailVerification login={this.login} {...props} user={this.state.user} />} />
 
 
-                    <Route exact path="/blog" render={props => <Blog {...props} user={this.state.user} />} />
-                    <Route exact path="/experts" render={props => <ExpertsPage {...props} user={this.state.user} />} />
-                    <Route exact path="/course" render={props => <Course {...props} user={this.state.user} />} />
-                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} />} />
-                    <Route exact path="/blogcontent/:id" render={props => <BlogContent {...props} user={this.state.user} />} />
-                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} />} />
+                    <Route exact path="/blog" render={props => <Blog {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/experts" render={props => <ExpertsPage {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/course" render={props => <Course {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/blogcontent/:id" render={props => <BlogContent {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>
             </div>
