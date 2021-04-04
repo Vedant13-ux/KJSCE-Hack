@@ -13,6 +13,8 @@ import Questions from './Auth/newAppointment'
 import Chats from './Chat/chats'
 import ExpertsPage from '../components/ExpertsPage'
 import BlogContent from '../components/BlogContent'
+import jwtDecode from 'jwt-decode'
+import { apiCallAuth } from '../services/api'
 
 class Main extends React.Component {
     constructor(props) {
@@ -28,13 +30,33 @@ class Main extends React.Component {
             localStorage.clear()
         }
     }
-    componentWillMount() {
+    async componentWillMount() {
+
         if (Object.keys(this.state.user) === 0) {
             this.props.history.push("/");
         }
-        if (localStorage.jwtToken == null) {
+        if ((localStorage.jwtToken)) {
+            console.log('Token is there')
+            var userId = '';
+            try {
+                userId = await jwtDecode(localStorage.jwtToken)['_id'];
+                console.log(userId);
+                apiCallAuth('get', '/user/' + userId, '')
+                    .then((result) => {
+                        this.login(result)
+                    }).catch((err) => {
+                        console.log(err);
+                    });
 
+            } catch (err) {
+                console.log(err);
+                await this.logout();
+                this.props.history.push('/');
+            }
+        } else {
+            this.props.history.push('/');
         }
+        console.log(this.state.user);
     }
 
     render() {
@@ -54,7 +76,7 @@ class Main extends React.Component {
                     <Route exact path="/course" render={props => <Course {...props} />} />
                     <Route exact path="/newuser" render={props => <Questions {...props} />} />
                     <Route exact path="/blogcontent" render={props => <BlogContent {...props} />} />
-                    <Route exact path="/newappointment" render={props => <Questions {...props} />} />
+                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>
             </div>
