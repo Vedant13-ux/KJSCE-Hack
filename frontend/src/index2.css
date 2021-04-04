@@ -37,6 +37,10 @@
   color: white;
 }
 
+.avatar {
+  margin-top: -10px;
+}
+
 .logo {
   margin-top: 1px;
   margin-left: 30px;

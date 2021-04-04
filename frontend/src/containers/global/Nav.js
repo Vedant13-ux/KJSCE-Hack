@@ -34,7 +34,7 @@ class Nav extends React.Component {
                             <li><Link to="/login">Login</Link></li>
                         }
                         {Object.keys(this.state.user).length !== 0 &&
-                            <li style={{ display: 'inline-flex', alignItems: 'center', paddingBottom: '10px' }}>
+                            <li className="avatar" style={{ display: 'inline-flex', alignItems: 'center', paddingBottom: '10px' }}>
                                 <Avatar
                                     style={{ marginRight: '5px' }}
                                     aria-label="recipe"
