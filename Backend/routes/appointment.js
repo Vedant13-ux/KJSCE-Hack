@@ -20,7 +20,7 @@ router.post("/newAppointment", async (req, res, next) => {
     let hour = time.getHours()
     let minutes = time.getMinutes();
     if (minutes + 30 >= 60) {
-        hour = +1
+        hour += 1
         minutes = minutes + 30 - 60
     } else {
         minutes = minutes + 30
@@ -49,8 +49,10 @@ router.post("/newAppointment", async (req, res, next) => {
     }
     console.log(counsellor)
     let app = await db.Appointment.create(data);
-    user.appointments.splice(0,0,app)
+    user.appointments.push(app)
     user.save()
+    counsellor.appointments.push(app)
+    counsellor.save()
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
