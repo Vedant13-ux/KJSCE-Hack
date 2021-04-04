@@ -35,6 +35,7 @@ class BlogContent extends React.Component {
                             style={{ marginRight: '5px' }}
                             aria-label="recipe"
                         >
+                            
                             {this.props.user.name.slice(0, 1)}
                         </Avatar>
                         <div>{this.state.blog.author.name}</div> --
@@ -43,6 +44,7 @@ class BlogContent extends React.Component {
                     </li>
                     <h4 class="ui header">{this.state.blog.title}</h4>
                     <p>{this.state.blog.content}</p>
+
                 </div>
                 <Footer />
             </div>

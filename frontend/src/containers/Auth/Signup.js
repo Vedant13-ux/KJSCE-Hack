@@ -6,8 +6,8 @@ import {
     Typography,
     TextField,
     Button,
-    Link,
 } from "@material-ui/core";
+import { Link } from 'react-router-dom'
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import Alert from "@material-ui/lab/Alert";
 import { apiCallAuth } from "../../services/api";
@@ -19,6 +19,7 @@ class RegisterStudents extends React.Component {
             name: "",
             email: "",
             password: "",
+            field: "",
             role: this.props.role,
             error: "",
             success: "",
@@ -32,7 +33,8 @@ class RegisterStudents extends React.Component {
             const {
                 name,
                 email,
-                password
+                password,
+                field
             } = this.state;
             const data = { name, email, password };
             apiCallAuth("post", "/signup", data)
@@ -66,7 +68,7 @@ class RegisterStudents extends React.Component {
                         <h2 style={headerStyle}>Sign Up</h2>
                         <Typography variant="caption" gutterBottom>
                             Please fill this form to create an account.
-            </Typography>
+                    </Typography>
                     </Grid>
                     <form onSubmit={this.handleSubmit}>
                         <TextField
@@ -88,7 +90,7 @@ class RegisterStudents extends React.Component {
                             onChange={this.handleChange}
                             required
                         />
-                      
+
 
 
                         <TextField
@@ -110,8 +112,29 @@ class RegisterStudents extends React.Component {
                             name="confirm"
                             type="password"
                         />
+                        <br></br>
+
+                        {this.state.role === "advisor" &&
+                            <div class="grouped fields">
+                                <label>Field</label>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="field" checked="checked" value="Cyberbullying Counsellor" onChange={this.handleChange} required />
+                                        <label>Cyberbullying Counsellor</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="field" value="Normal Counsellor" onChange={this.handleChange} required />
+
+                                        <label>Normal Counsellor</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
                         <Typography style={{ marginRight: "0", marginTop: "10px" }}>
-                            Already have an account? <Link href="/login">Sign In</Link>
+                            Already have an account? <Link to="/login">Sign In</Link>
                         </Typography>
                         <Button
                             type="submit"
