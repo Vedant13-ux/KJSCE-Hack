@@ -5,7 +5,7 @@ import Footer from '../containers/global/Footer'
 function ExportInfo(props) {
     return (
         <div>
-            <Nav user={props.user} history={props.history} />
+            <Nav user={props.user} logout={props.logout} />
 
             <div class="ui piled segment">
                 <h4 class="ui header">A header</h4>
