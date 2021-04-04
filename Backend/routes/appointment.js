@@ -25,7 +25,7 @@ router.get("/newAppointment", async (req, res, next) => {
     } else {
         minutes = minutes + 30
     }
-    const counsellor;
+    var counsellor;
     let user = await db.User.findById(req.body.userId);
     if (req.user.counsellor == null) {
         if (req.body.place == "On Internet") {
