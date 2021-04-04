@@ -15,7 +15,7 @@ router.get('/getall/:id', async (req, res, next) => {
 });
 
 // New Appointment
-router.get("/newAppointment", async (req, res, next) => {
+router.post("/newAppointment", async (req, res, next) => {
     let time = new Date().getTime();
     let hour = time.getHour()
     let minutes = time.getMinutes();
@@ -56,13 +56,18 @@ router.get("/newAppointment", async (req, res, next) => {
     });
     const mailOptions = {
         from: 'openwhen1403@gmail.com',
-        to: req.body.email,
+        to: counsellor.email,
         subject: 'Appointment',
         html:
             `<div>
             You have an Appointment with ${user.name} at ${time}.
         </div>
         <div>The link for the appointment is http://localhost:3000/chat/${app._id}</div>
+        <ul>Details:
+            <li>Place of Bullying : ${req.body / place}</li>
+            <li>Experience : ${req.body.experience}</li>
+
+        </ul>
         `
     }
     transporter.sendMail(mailOptions, (err, info) => {
