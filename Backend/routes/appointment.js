@@ -47,6 +47,7 @@ router.post("/newAppointment", async (req, res, next) => {
             advisee: req.body.userId
         }
     }
+    console.log(counsellor)
     let app = await db.Appointment.create(data);
     user.appointments.splice(0,0,app)
     user.save()
