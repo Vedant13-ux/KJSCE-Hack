@@ -6,11 +6,11 @@ import {
   TextField,
   Button,
   Typography,
-  Link,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Alert from "@material-ui/lab/Alert";
 import { apiCallAuth } from '../../services/api'
+import {Link} from 'react-router-dom'
 
 class Login extends React.Component {
   constructor(props) {
@@ -79,7 +79,7 @@ class Login extends React.Component {
 
             />
             <Typography style={{ marginTop: "10px" }}>
-              Don't have an account? <Link href="/register">Sign Up</Link>
+              Don't have an account? <Link to="signup">Sign Up</Link>
             </Typography>
             <Button
               type="submit"

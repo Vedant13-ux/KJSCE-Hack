@@ -42,17 +42,11 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={classes.heading}>What are the warning signs of bullying? </Typography>
+          <Typography className={classes.heading}>Who gets bullied?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          Some signs that may point to a bullying problem are: 
-          <ul>
-            <li>Unexplainable injuries</li>
-            <li>Lost or destroyed clothing, books, electronics, or jewelry</li>
-            <li>Difficulty sleeping or frequent nightmares</li>
-            <li>Sudden loss of friends or avoidance of social situations</li>
-          </ul>
+          Any child <strong>regardless</strong> of age or gender has the potential to be bullied. However, certain populations are more vulnerable due to disability, sexual orientation, physical appearance, and numerous other factors including race, gender, income and religion.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -103,6 +97,26 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
+          <Typography className={classes.heading}>What are the warning signs of bullying? </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          Some signs that may point to a bullying problem are: 
+          <ul>
+            <li>Unexplainable injuries</li>
+            <li>Lost or destroyed clothing, books, electronics, or jewelry</li>
+            <li>Difficulty sleeping or frequent nightmares</li>
+            <li>Sudden loss of friends or avoidance of social situations</li>
+          </ul>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
           <Typography className={classes.heading}>What do I do if my child is bullied?</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -114,6 +128,45 @@ export default function SimpleAccordion() {
             <li><strong>Encourage your child to make new friends.</strong> Help them make new friends. Help get them involved in activities to make new friends.</li>
             <li><strong>Share your own experiences.</strong> Sharing your own experiences with a bully will help them understand that they are not alone. </li>
             <li><strong>Brainstorm ways to solve the problem nonviolently.</strong> Encouraging retaliation may get your child hurt or suspended. </li>
+          </ul>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>What can I do if my child bullies others?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          It is difficult for most parents to learn that their child may be bullying others. However, parents must recognize that children who bully are at risk for more serious behavior problems. Therefore, it is important for them to take immediate action. <br></br>
+          Here are some suggested approaches:
+          <ul>
+            <li>Talk with your child. Offer a calm explanation of what your child is accused of, and ask for their account of the incident.</li>
+            <li>Hold the young person fully accountable for their actions. Calmly but firmly tell your child that bullying will not be tolerated, and that their behaviors will be taken seriously.</li>
+            <li>Develop clear rules and expectations for your child's behavior. Provide fair but consistent consequences if your child breaks the rules, and recognize and affirm appropriate behavior.</li>
+            <li>Spend more time with your child. Carefully monitor their activities, including where and with whom they spend their time. Supervise their use of social networking sites and texting.</li>
+            <li>Work with your child's school to ensure that your child is held accountable for his or her bullying behavior. Ask the school to keep you informed about any further incidents.</li>
+          </ul>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>How can I best work with my child's school to address bullying?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          <ul>
+            <li>Support your school in evolving their policy regarding bullying. Legislation varies among States, but most States now require a specific anti-bullying policy, and many required (as of 2011) that this include responding to bullying events outside of school (such as cyber-bullying) that affect student interactions during the school day</li>
+            <li>Adopt a position of "partnering" with your school. Accusing a school of not being responsive, or of allowing bullying, perpetuates conflicts (sometimes perceived by schools as "reverse bullying" by parents of bullied students). Instead, discuss with your school staff what would benefit your child and other students impacted by a bullying event.</li>
           </ul>
           </Typography>
         </AccordionDetails>
