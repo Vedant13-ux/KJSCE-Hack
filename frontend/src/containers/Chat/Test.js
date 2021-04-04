@@ -4,14 +4,14 @@ import Navbar from '../global/Nav'
 import socketClient from "socket.io-client";
 import Nav from '../global/Nav';
 const SERVER = "http://localhost:3001";
-var socketstore=null;
+var socketstore = null;
 
 class ChatApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             contacts: [],
-            messages: [], 
+            messages: [],
             message: '',
             conversations: [],
             socket: null
@@ -24,18 +24,18 @@ class ChatApp extends React.Component {
             socket.on("yo", () => {
                 console.log("connected to server");
             });
-            socket.on('new-messr',m=>{
+            socket.on('new-messr', m => {
                 console.log(m)
-                let tilln=this.state.messages
+                let tilln = this.state.messages
                 tilln.push(m)
-                this.setState({messages:tilln})
+                this.setState({ messages: tilln })
             })
-            socket.on('get-rmess',m=>{
-                this.setState({messages:m.messages,contacts:m.counsellor})
+            socket.on('get-rmess', m => {
+                this.setState({ messages: m.messages, contacts: m.counsellor })
                 console.log(m)
             })
-            socket.emit("join-room",this.props.match.params.id)
-            socketstore=socket
+            socket.emit("join-room", this.props.match.params.id)
+            socketstore = socket
             //this.setState({ socket })
             //socket.close()
         };
@@ -79,26 +79,27 @@ class ChatApp extends React.Component {
         }
         const newItem = {
             text: this.state.message,
-            author:this.props.uid
+            author: this.props.uid
         };
-        socketstore.emit('room-message',{message:newItem,rid:this.props.match.params.id})
-        this.setState({message:''});
+        socketstore.emit('room-message', { message: newItem, rid: this.props.match.params.id })
+        this.setState({ message: '' });
     }
 }
 
 class MessagesHistory extends React.Component {
-    
+
     render() {
-        return [].concat(this.props.items).reverse().map(item =>{
+        return [].concat(this.props.items).reverse().map(item => {
             return (
-            <div className={"message " + (item.author._id==this.props.uid ? "me" : "")} key={item.id}>
-                
-                <div className="message-body">
-                <h5 style={{margin:"0px"}}>{item.author.name}</h5>
-                    {item.text}
+                <div className={"message " + (item.author._id === this.props.uid ? "me" : "")} key={item.id}>
+
+                    <div className="message-body">
+                        <h5 style={{ margin: "0px" }}>{item.author.name}</h5>
+                        {item.text}
+                    </div>
                 </div>
-            </div>
-        )});
+            )
+        });
     }
 }
 

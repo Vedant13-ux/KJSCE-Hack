@@ -3,8 +3,6 @@ import '../../index2.css';
 import Logo from '../../images/helping_mind_logo1.png';
 import { Link } from 'react-router-dom';
 import Avatar from "@material-ui/core/Avatar";
-import { makeStyles } from "@material-ui/core/styles";
-import { red } from "@material-ui/core/colors";
 
 
 
