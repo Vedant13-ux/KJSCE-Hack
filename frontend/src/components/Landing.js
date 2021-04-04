@@ -11,7 +11,7 @@ import Experts from './Experts'
 function Landing(props) {
     return (
         <div className="landing">
-            <Nav user={props.user} history={props.history} />
+            <Nav user={props.user} logout={props.logout} />
             <About />
             <Experts />
             <Footer />

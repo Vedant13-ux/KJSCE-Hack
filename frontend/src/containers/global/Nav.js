@@ -35,20 +35,21 @@ class Nav extends React.Component {
                             <li><Link to="/login">Login</Link></li>
                         }
                         {Object.keys(this.state.user).length !== 0 &&
-                            <div>
-                                <li style={{ display: 'inline-flex', alignItems: 'center' }}>
-                                    <Avatar
-                                        style={{ marginRight: '5px' }}
-                                        aria-label="recipe"
-                                    >
-                                        {this.props.user.name.slice(0, 1)}
-                                    </Avatar>
-                                    <div>{this.state.user.name}</div>
-                                </li>
-                                <li>
-                                    Logout
-                                </li>
-                            </div>
+                            <li style={{ display: 'inline-flex', alignItems: 'center', paddingBottom: '10px' }}>
+                                <Avatar
+                                    style={{ marginRight: '5px' }}
+                                    aria-label="recipe"
+                                >
+                                    {this.props.user.name.slice(0, 1)}
+                                </Avatar>
+                                <div>{this.state.user.name}</div>
+                            </li>
+                        }
+                        {Object.keys(this.state.user).length !== 0 &&
+                            <li >
+                                Logout
+                            </li>
+
                         }
                     </ul>
                 </nav>

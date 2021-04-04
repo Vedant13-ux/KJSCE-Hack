@@ -48,7 +48,7 @@ class ChatApp extends React.Component {
     render() {
         return (
             <div id="chat">
-                <Navbar></Navbar>
+                <Navbar user={this.props.user} logout={this.props.logout}></Navbar>
                 <div className="app">
                     <div className="contact-list">
                         <h1 className="title">Participant</h1>
