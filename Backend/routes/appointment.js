@@ -40,7 +40,7 @@ router.post("/newAppointment", async (req, res, next) => {
             advisee: req.body.userId
         }
     } else {
-        counsellor= await db.User.findById(counsellor)
+        counsellor= await db.User.findById(req.body.counsellor)
         data = {
             time: `${hour}:${minutes}`,
             counsellor: req.body.counsellor,
