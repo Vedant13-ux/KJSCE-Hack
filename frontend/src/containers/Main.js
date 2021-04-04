@@ -14,6 +14,7 @@ import Chats from './Chat/chats'
 import ExpertsPage from '../components/ExpertsPage'
 import BlogContent from '../components/BlogContent'
 import jwtDecode from 'jwt-decode'
+import { apiCallAuth } from '../services/api'
 
 class Main extends React.Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class Main extends React.Component {
         }
     }
     async componentWillMount() {
+
         if (Object.keys(this.state.user) === 0) {
             this.props.history.push("/");
         }
@@ -39,7 +41,12 @@ class Main extends React.Component {
             try {
                 userId = await jwtDecode(localStorage.jwtToken)['_id'];
                 console.log(userId);
-                this.props.updateRefresh(userId);
+                apiCallAuth('get', '/user/' + userId, '')
+                    .then((result) => {
+                        this.login(result)
+                    }).catch((err) => {
+                        console.log(err);
+                    });
 
             } catch (err) {
                 console.log(err);
@@ -49,6 +56,7 @@ class Main extends React.Component {
         } else {
             this.props.history.push('/');
         }
+        console.log(this.state.user);
     }
 
     render() {

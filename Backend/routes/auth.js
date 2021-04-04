@@ -22,4 +22,13 @@ router.get('/verify-email/:token', async (req, res, next) => {
         });
 });
 
+router.get('/user/:id', (req, res, next) => {
+    db.User.findById(req.params.id, '-password')
+        .then((user) => {
+            return res.send(user)
+        }).catch((err) => {
+            next(err);
+        });
+})
+
 module.exports = router;

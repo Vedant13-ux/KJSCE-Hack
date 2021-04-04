@@ -11,7 +11,7 @@ export default class ChatApp extends React.Component {
     };
   }
   componentDidMount() {
-    apiCall("get", "appointment/getall/" + this.props.uid).then((v) => {
+    apiCall("get", "/appointment/getall/" + this.props.uid).then((v) => {
       console.log(v);
       this.setState({ appointments: v });
     });
