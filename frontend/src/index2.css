@@ -103,8 +103,24 @@
 
 /* Course  */
 
+.course {
+  margin-top: 50px;
+  background: radial-gradient(rgb(203, 206, 241), white);
+}
+
+.course_wrap {
+  padding-top: 50px;
+}
+
+.course_title {
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
 .course_card {
-  padding-top: 100px;
+  padding-top: 50px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -128,9 +144,18 @@
   margin-bottom: 50px;
 }
 
+.add_icon {
+  position: fixed;
+  margin-left: 1200px;
+  margin-top: 300px;
+}
+
 .experts {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-weight: 400;
 }
 
 .expertsHr {
@@ -143,7 +168,7 @@
   background-image: linear-gradient(
     to top,
     rgba(255, 0, 0, 0),
-    rgb(226, 241, 253)
+    rgb(229, 226, 253)
   );
   padding-top: 7px;
 }
