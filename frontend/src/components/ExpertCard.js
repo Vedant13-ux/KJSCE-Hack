@@ -67,7 +67,7 @@ export default function ExpertCard() {
 
       <CardActions disableSpacing>
       <Button  variant="outlined" size="small" color="primary">
-            <a className="watch_btn" href="#" target="_blank">Watch Now</a>
+            <a className="watch_btn" href="#" target="_blank">Make an appointment</a>
           </Button>
       </CardActions>
     </Card>
