@@ -25,12 +25,12 @@ class RegisterStudents extends React.Component {
         };
         this.handleSubmit = (e) => {
             e.preventDefault();
-            const {
+            var {
                 place,
                 experience,
                 reachout
             } = this.state;
-            const data = { place, experience, reachout, userId: this.props.user._id, };
+            const data = { place,counsellor:new URLSearchParams(this.props.location.search).get("cid"), experience, reachout, userId: this.props.user._id, }; 
             apiCall("post", "/appointment/newAppointment", data)
                 .then(async (response) => {
                     console.log(response);
@@ -38,7 +38,7 @@ class RegisterStudents extends React.Component {
                 })
                 .catch((err) => {
                     console.log(err);
-                    return this.setState({ error: err.response.data.error.message });
+                    //return this.setState({ error: err.response.data.error.message });
                 });
         };
     }
