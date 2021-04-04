@@ -30,6 +30,8 @@ class Nav extends React.Component {
                         <li><Link to="/course">Course</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/experts">Experts</Link></li>
+
                         {Object.keys(this.state.user).length === 0 &&
                             <li><Link to="/login">Login</Link></li>
                         }
@@ -44,6 +46,7 @@ class Nav extends React.Component {
                                 <div>{this.state.user.name}</div>
                             </li>
                         }
+                        
                         {Object.keys(this.state.user).length !== 0 &&
                             <li onClick={this.props.logout}>
                                 Logout

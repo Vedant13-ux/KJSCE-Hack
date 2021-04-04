@@ -1,33 +1,55 @@
-import React, {useState, useEffect} from 'react';
-import Nav from '../containers/global/Nav';
-import About from '../containers/global/About';
-import QnA from './QnA';
+import React, { useState, useEffect } from 'react';
+import ExpertCard from './ExpertCard';
 import '../index2.css';
-import Footer from '../containers/global/Footer';
-import ExpertCard from './ExpertCard'
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import {Link} from 'react-router-dom'
+import Nav from '../containers/global/Nav';
+import Footer from '../containers/global/Footer'
+import ExpertInfo from './ExpertInfo';
+import { apiCallAuth } from '../services/api'
 
 
-function Experts(props) {
-    return (
-        <div className="expertsSec">
-            <h1 className="experts">----- Meet our experts -----</h1>
-            <div className="expertDemo">
-                <div className="expertCard"><ExpertCard /></div> 
-                <div className="expertCard"><ExpertCard /></div>
-                <div className="expertCard"><ExpertCard /></div>
+class ExpertsPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            experts: []
+        }
+    }
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        apiCallAuth('get', '/expertsthree', '')
+            .then((experts) => {
+                this.setState({ experts })
+            }).catch((err) => {
+                console.log(err);
+            });
+    }
+    render() {
+        return (
+
+            <div className="course">
+                <Nav user={this.props.user} logout={this.props.logout} />
+                <div className="course_wrap">
+                    <div className="course_title">
+                        <h1>----- Our Experts -----</h1>
+                    </div>
+                    <div className="course_card">
+                        {this.state.experts.map(expert => {
+                            return <div className="expertCard"><ExpertCard expert={expert} /></div>
+                        })}
+                    </div>
+
+
+
+                </div>
+
+
+                <Footer />
             </div>
-            <div className="meetExperts">
-                <Link to="/experts"><Button className="btn_specific"
-                            variant="outlined"
-                            color="primary">
-                                Meet our experts
-                            </Button></Link>
-            </div>
-        </div>
-    )
+
+
+
+        )
+    }
 }
 
-export default Experts
+export default ExpertsPage

@@ -56,12 +56,13 @@ export default function ExpertCard(props) {
 
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
+          Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at.
         </Typography>
       </CardContent>
 
       <CardActions disableSpacing>
         <Button variant="outlined" size="small" color="primary">
-          <Link className="watch_btn" to="#" target="_blank">Make an appointment</Link>
+          <Link className="watch_btn" to={"/newappointment?cid=" + props.expert._id}>Make an appointment</Link>
         </Button>
       </CardActions>
     </Card>

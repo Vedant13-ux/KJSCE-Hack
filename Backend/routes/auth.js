@@ -39,5 +39,13 @@ router.get('/experts', (req, res, next) => {
             next(err);
         });
 })
+router.get('/expertsthree', (req, res, next) => {
+    db.User.find({ role: 'advisor' }, '-password').limit(3)
+        .then((user) => {
+            return res.send(user)
+        }).catch((err) => {
+            next(err);
+        });
+})
 
 module.exports = router;
