@@ -51,14 +51,19 @@ export default function FloatingButton() {
             fullWidth
           />
 
-        <TextField
+        {/* <TextField
             autoFocus
             margin="dense"
             id="name"
             label="Content"
             type="text"
             fullWidth
-          />
+          /> */}
+
+          <div className="ui form" >
+            <label>Content</label>
+            <textarea name="content" required></textarea>
+          </div>
 
         </DialogContent>
         

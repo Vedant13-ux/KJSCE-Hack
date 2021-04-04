@@ -12,7 +12,8 @@ import '../index2.css';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    minHeight: 400,
+    minHeight: 410,
+    maxHeight: 410
   },
 });
 function youtube_parser(url){
