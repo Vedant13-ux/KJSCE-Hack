@@ -29,9 +29,9 @@ router.post("/newAppointment", async (req, res, next) => {
     let user = await db.User.findById(req.body.userId);
     if (req.body.counsellor == null) {
         if (req.body.place == "On Internet") {
-            counsellor = await db.User.findOne({ field: "Cyberbullying counsellor" });
+            counsellor = await db.User.findOne({ field: "Cyberbullying Councellor" });
         } else {
-            counsellor = await db.User.findOne({ field: -"Cyberbullying counsellor" });
+            counsellor = await db.User.findOne({ field: "Normal Councellor" });
         }
 
         data = {
