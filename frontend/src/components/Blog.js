@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogCard from './BlogCard';
 import '../index2.css';
 import Nav from '../containers/global/Nav';
@@ -7,6 +7,9 @@ import FloatingButtons from './FloatingButton';
 
 
 function Blog(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     return (
         <div className="course">
             <Nav user={props.user} history={props.history} />
