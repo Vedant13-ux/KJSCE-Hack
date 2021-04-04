@@ -31,4 +31,13 @@ router.get('/user/:id', (req, res, next) => {
         });
 })
 
+router.get('/experts', (req, res, next) => {
+    db.User.find({ role: 'advisor' }, '-password')
+        .then((user) => {
+            return res.send(user)
+        }).catch((err) => {
+            next(err);
+        });
+})
+
 module.exports = router;
