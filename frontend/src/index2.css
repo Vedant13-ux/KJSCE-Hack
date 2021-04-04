@@ -120,10 +120,11 @@
 }
 
 .course_card {
+  margin-left: 20px;
   padding-top: 50px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   flex-basis: 22%;
   margin-bottom: 250px;
@@ -227,4 +228,8 @@
 
 .apt {
   padding-left: 10px;
+}
+
+.watch_btn {
+  text-decoration: none;
 }

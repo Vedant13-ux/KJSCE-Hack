@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import '../index2.css';
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +29,7 @@ export default function MediaCard(props) {
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
-          height="140"
+          height="175"
           image={"https://img.youtube.com/vi/"+youtube_parser(props.data.path)+"/0.jpg"}
           title={props.data.title}
         />
@@ -42,8 +43,8 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button  size="small" color="primary">
-          <a href={props.data.path}>Watch Now</a>
+        <Button  variant="outlined" size="small" color="primary">
+          <a className="watch_btn" href={props.data.path} target="blank">Watch Now</a>
         </Button>
       </CardActions>
     </Card>
