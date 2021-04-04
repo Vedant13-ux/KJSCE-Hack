@@ -6,17 +6,17 @@ import Footer from '../containers/global/Footer'
 import FloatingButtons from './FloatingButton';
 
 
-function Blog() {
+function Blog(props) {
     return (
         <div className="course">
-            <Nav />
+            <Nav user={props.user} history={props.history} />
             <div className="course_wrap">
                 <div className="course_title">
                     <h1>----- Blog -----</h1>
                 </div>
-                
+
                 <div className="course_card">
-                    <div className="blogCard"><BlogCard /></div> 
+                    <div className="blogCard"><BlogCard /></div>
                     <div className="blogCard"><BlogCard /></div>
                     <div className="blogCard"><BlogCard /></div>
                     <div className="blogCard"><BlogCard /></div>
@@ -26,8 +26,8 @@ function Blog() {
                 </div>
 
             </div>
-            
-            
+
+
             <Footer />
         </div>
     )
