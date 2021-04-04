@@ -234,3 +234,8 @@
 .watch_btn {
   text-decoration: none;
 }
+
+.bottom_btn {
+  position: absolute;
+  bottom: 0;
+}
