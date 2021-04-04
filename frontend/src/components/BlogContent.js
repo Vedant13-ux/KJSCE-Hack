@@ -29,7 +29,7 @@ class BlogContent extends React.Component {
             <div>
                 <Nav user={this.props.user} logout={this.props.logout} />
 
-                <div class="ui piled segment" style={{ marginTop: '400px', maxWidth: '1000px', margin: '0 auto' }}>
+                <div class="ui piled segment" className="blog__content" style={{ marginTop: '400px', maxWidth: '1000px', margin: '0 auto' }}>
                     <li className="avatar" style={{ display: 'inline-flex', alignItems: 'center', paddingBottom: '10px' }}>
                         <Avatar
                             style={{ marginRight: '5px' }}

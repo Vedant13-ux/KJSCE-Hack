@@ -247,3 +247,8 @@
   position: absolute;
   bottom: 0;
 } */
+
+.blog__content {
+  padding-top: 150px;
+  padding-bottom: 75px;
+}
