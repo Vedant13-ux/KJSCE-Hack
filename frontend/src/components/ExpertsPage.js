@@ -6,7 +6,7 @@ import Footer from '../containers/global/Footer'
 import ExpertInfo from './ExpertInfo';
 function ExpertsPage() {
     return (
-
+        
         <div className="course">
         <Nav />
         <div className="course_wrap">

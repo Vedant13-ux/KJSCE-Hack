@@ -1,20 +1,15 @@
 import React from "react";
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
 
 import {
     Grid,
     Paper,
     Avatar,
     Typography,
-    TextField,
-    Button,
-    Link,
+    Button
+
 } from "@material-ui/core";
-import { apiCallAuth } from "../../services/api";
+import { apiCall } from "../../services/api";
 
 class RegisterStudents extends React.Component {
     constructor(props) {
@@ -35,11 +30,11 @@ class RegisterStudents extends React.Component {
                 experience,
                 reachout
             } = this.state;
-            const data = { place, experience, reachout };
-            apiCallAuth("post", "/signup", data)
+            const data = { place, experience, reachout, userId: this.props.user._id, };
+            apiCall("post", "/appointment/newAppointment", data)
                 .then(async (response) => {
                     console.log(response);
-                    return await this.setState({ success: true, disabled: true, error: '' });
+                    return await this.setState({ error: '' });
                 })
                 .catch((err) => {
                     console.log(err);
