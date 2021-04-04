@@ -45,7 +45,7 @@ class Nav extends React.Component {
                             </li>
                         }
                         {Object.keys(this.state.user).length !== 0 &&
-                            <li >
+                            <li onClick={this.props.logout}>
                                 Logout
                             </li>
 
