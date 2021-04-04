@@ -15,6 +15,7 @@ import ExpertsPage from '../components/ExpertsPage'
 import BlogContent from '../components/BlogContent'
 import jwtDecode from 'jwt-decode'
 import { apiCallAuth } from '../services/api'
+import QnA from '../components/QnA'
 
 class Main extends React.Component {
     constructor(props) {
@@ -81,9 +82,9 @@ class Main extends React.Component {
 
 
                     <Route exact path="/blog" render={props => <Blog {...props} user={this.state.user} logout={this.logout} />} />
+                    <Route exact path="/faq" render={props => <QnA {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="/experts" render={props => <ExpertsPage {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="/course" render={props => <Course {...props} user={this.state.user} logout={this.logout} />} />
-                    <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="/blogcontent/:id" render={props => <BlogContent {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} logout={this.logout} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />

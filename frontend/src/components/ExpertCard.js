@@ -61,7 +61,6 @@ export default function ExpertCard() {
     
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Add Short Description of the person
         </Typography>
       </CardContent>
 

@@ -24,11 +24,11 @@ export default function About() {
                         color="primary">
                             Chat Now!
                         </Button></Link>
-                        <Button className="btn_specific"
+                        <Link to="/newappointment"><Button className="btn_specific"
                          variant="outlined"
                           color="primary">
                             Book Appointment
-                        </Button>
+                        </Button></Link>
                     </div>
                 </div>
             </div>

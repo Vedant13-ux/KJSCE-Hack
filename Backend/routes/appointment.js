@@ -16,8 +16,8 @@ router.get('/getall/:id', async (req, res, next) => {
 
 // New Appointment
 router.post("/newAppointment", async (req, res, next) => {
-    let time = new Date().getTime();
-    let hour = time.getHour()
+    let time = new Date();
+    let hour = time.getHours()
     let minutes = time.getMinutes();
     if (minutes + 30 >= 60) {
         hour = +1
@@ -27,7 +27,7 @@ router.post("/newAppointment", async (req, res, next) => {
     }
     var counsellor;
     let user = await db.User.findById(req.body.userId);
-    if (req.user.counsellor == null) {
+    if (req.body.counsellor == null) {
         if (req.body.place == "On Internet") {
             counsellor = await db.User.findOne({ field: "Cyberbullying Councellor" });
         } else {
@@ -40,6 +40,7 @@ router.post("/newAppointment", async (req, res, next) => {
             advisee: req.body.userId
         }
     } else {
+        counsellor= await db.User.findById(counsellor)
         data = {
             time: `${hour}:${minutes}`,
             counsellor: req.body.counsellor,
@@ -54,6 +55,7 @@ router.post("/newAppointment", async (req, res, next) => {
             pass: process.env.GMAIL_APP_PASSWORD
         }
     });
+    
     const mailOptions = {
         from: 'openwhen1403@gmail.com',
         to: counsellor.email,

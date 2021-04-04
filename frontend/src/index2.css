@@ -86,9 +86,9 @@
 /* QnA CSS */
 
 .qna {
-  margin-top: 30px;
-  padding-left: 130px;
-  width: 100%;
+  overflow-x: hidden;
+  padding-left: 50px;
+  width: 97%;
   padding-top: 80px;
   padding-bottom: 100px;
   background: radial-gradient(white, lightgray);
