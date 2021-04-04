@@ -40,19 +40,43 @@ function Course() {
     ]
     return (
         
-        <div>
-        <Nav />
-        <div className="course_card">
+    //     <div>
+    //     <Nav />
+    //     <div className="course_card">
 
-            {video.map((d, i)=>{
-                return(
-                    <div className="mediacard"><MediaCard key={i} data={d}></MediaCard></div>
-                );
-            })}
+    //         {video.map((d, i)=>{
+    //             return(
+    //                 <div className="mediacard"><MediaCard key={i} data={d}></MediaCard></div>
+    //             );
+    //         })}
 
+    //     </div>
+    //     <Footer />
+    // </div>
+
+        <div className="course">
+            <Nav />
+            <div className="course_wrap">
+                <div className="course_title">
+                    <h1>----- Tip & Tricks -----</h1>
+                </div>
+                
+                <div className="course_card">
+
+                        {video.map((d, i)=>{
+                            return(
+                                <div className="mediacard"><MediaCard key={i} data={d}></MediaCard></div>
+                            );
+                        })}
+
+                    </div>
+
+            </div>
+
+
+            <Footer />
         </div>
-        <Footer />
-    </div>
+
     )
 }
 

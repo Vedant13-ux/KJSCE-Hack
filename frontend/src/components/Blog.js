@@ -8,17 +8,25 @@ import FloatingButtons from './FloatingButton';
 
 function Blog() {
     return (
-        <div>
+        <div className="course">
             <Nav />
-            <div className="course_card">
-                <div className="blogCard"><BlogCard /></div> 
-                <div className="blogCard"><BlogCard /></div>
-                <div className="blogCard"><BlogCard /></div>
-                <div className="blogCard"><BlogCard /></div>
-                <div className="blogCard"><BlogCard /></div>
-                <div className="blogCard"><BlogCard /></div>
-                <div className="add_icon"><FloatingButtons /></div>
+            <div className="course_wrap">
+                <div className="course_title">
+                    <h1>----- Blog -----</h1>
+                </div>
+                
+                <div className="course_card">
+                    <div className="blogCard"><BlogCard /></div> 
+                    <div className="blogCard"><BlogCard /></div>
+                    <div className="blogCard"><BlogCard /></div>
+                    <div className="blogCard"><BlogCard /></div>
+                    <div className="blogCard"><BlogCard /></div>
+                    <div className="blogCard"><BlogCard /></div>
+                    <div className="add_icon"><FloatingButtons /></div>
+                </div>
+
             </div>
+            
             
             <Footer />
         </div>
