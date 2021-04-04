@@ -9,7 +9,8 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import {Link} from 'react-router-dom'
 
-function Experts() {
+
+function Experts(props) {
     return (
         <div className="expertsSec">
             <h1 className="experts">----- Meet our experts -----</h1>

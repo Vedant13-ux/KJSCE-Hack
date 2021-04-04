@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 
@@ -18,6 +17,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { light } from '@material-ui/core/styles/createPalette';
 import '../index2.css';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ExpertCard() {
+export default function ExpertCard(props) {
   const classes = useStyles();
-//   const [expanded, setExpanded] = React.useState(false);
+  //   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     // setExpanded(!expanded);
@@ -47,27 +47,22 @@ export default function ExpertCard() {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            {props.expert.name.slice(0, 1)}
           </Avatar>
         }
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
-        title="Name"
-        subheader="Profession"
+        title={props.expert.name}
+        subheader={props.expert.field}
       />
-    
+
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
         </Typography>
       </CardContent>
 
       <CardActions disableSpacing>
-      <Button  variant="outlined" size="small" color="primary">
-            <a className="watch_btn" href="#" target="_blank">Make an appointment</a>
-          </Button>
+        <Button variant="outlined" size="small" color="primary">
+          <Link className="watch_btn" to="#" target="_blank">Make an appointment</Link>
+        </Button>
       </CardActions>
     </Card>
   );

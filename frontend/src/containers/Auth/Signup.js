@@ -34,9 +34,10 @@ class RegisterStudents extends React.Component {
                 name,
                 email,
                 password,
-                field
+                field,
+                role
             } = this.state;
-            const data = { name, email, password };
+            const data = { name, email, password, role, field };
             apiCallAuth("post", "/signup", data)
                 .then(async (response) => {
                     console.log(response);
