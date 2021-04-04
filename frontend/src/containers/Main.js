@@ -18,23 +18,26 @@ import { apiCallAuth } from '../services/api'
 
 class Main extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = { user: {} }
+        super(props);
+        this.state = { user: {}, authenticated: false,start:true };
+        this.setToken = (token) => {
+            localStorage.setItem("jwtToken", token)
+        }
         this.login = (user) => {
-            this.setState({ user })
-            localStorage.setItem("jwtToken", user.token)
+            if (user.token != null) {
+                this.setToken(user.token);
+            }
+            return this.setState({ user, authenticated: true,start:false });
         }
         this.logout = () => {
-            this.setState({ user: {} });
+            this.setState({ user: {}, authenticated: false,start:false });
             this.props.history.push("/")
             localStorage.clear()
         }
     }
     async componentWillMount() {
 
-        if (Object.keys(this.state.user) === 0) {
-            this.props.history.push("/");
-        }
+        
         if ((localStorage.jwtToken)) {
             console.log('Token is there')
             var userId = '';
@@ -44,7 +47,9 @@ class Main extends React.Component {
                 apiCallAuth('get', '/user/' + userId, '')
                     .then((result) => {
                         this.login(result)
+                        console.log(this.state.user);
                     }).catch((err) => {
+                        this.setState({start:false})
                         console.log(err);
                     });
 
@@ -54,12 +59,16 @@ class Main extends React.Component {
                 this.props.history.push('/');
             }
         } else {
+            this.setState({start:false})
             this.props.history.push('/');
         }
-        console.log(this.state.user);
+        
     }
 
     render() {
+        if (this.state.start) {
+            return <div></div>
+        }
         return (
             <div>
                 <Switch>
@@ -74,8 +83,8 @@ class Main extends React.Component {
                     <Route exact path="/blog" render={props => <Blog {...props} />} />
                     <Route exact path="/experts" render={props => <ExpertsPage {...props} />} />
                     <Route exact path="/course" render={props => <Course {...props} />} />
-                    <Route exact path="/newuser" render={props => <Questions {...props} />} />
-                    <Route exact path="/blogcontent" render={props => <BlogContent {...props} />} />
+                    <Route exact path="/newappointment" render={props => <Questions {...props} />} />
+                    <Route exact path="/blogcontent/:id" render={props => <BlogContent {...props} />} />
                     <Route exact path="/newappointment" render={props => <Questions {...props} user={this.state.user} />} />
                     <Route exact path="*" render={props => <div>Not Found</div>} />
                 </Switch>
